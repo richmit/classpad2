@@ -3,6 +3,14 @@
 This repo contains four directories:
 
  - mjrLib: Tons of random functions
+   - CAS helpers
+   - Physical Constants
+   - Bit Manipulation
+   - Linear Algebra
+   - Polynomial Stuff
+   - Repeated Measurement with Uncertitanty
+   - Trig Functions
+   - Units Conversions
  - mjrProg: A few programs
  - mjrComp: Computational eActivities
  - docs: Documentation (rendered `org-mode` files).
@@ -12,3 +20,5 @@ The documentation is also published here: [Docs](https://richmit.github.io/class
 Have fun!
 
 -mitch
+
+
