@@ -1,0 +1,243 @@
+# -*- Mode:Org; Coding:utf-8; fill-column:158 -*-
+# ######################################################################################################################################################.H.S.##
+# FILE:        readme.org
+#+TITLE:       Classpad II Stuff
+#+AUTHOR:      GIT-NAME
+#+EMAIL:       GIT-EMAIL
+#+DATE:        2024-02-01
+#+DESCRIPTION: DESCRIPTION FIXME
+#+KEYWORDS:    KEYWORDS FIXME
+#+LANGUAGE:    en
+#+OPTIONS:     num:t toc:nil \n:nil @:t ::t |:t ^:nil -:t f:t *:t <:t skip:nil d:nil todo:t pri:nil H:5 p:t author:t html-scripts:nil 
+#+SEQ_TODO:    TODO:NEW(t)                         TODO:WORK(w)    TODO:HOLD(h)    | TODO:FUTURE(f)   TODO:DONE(d)    TODO:CANCELED(c)
+#+PROPERTY: header-args :eval never-export
+#+HTML_HEAD: <style>body { width: 95%; margin: 2% auto; font-size: 18px; line-height: 1.4em; font-family: Georgia, serif; color: black; background-color: white; }</style>
+# Change max-width to get wider output -- also note #content style below
+#+HTML_HEAD: <style>body { min-width: 500px; max-width: 1024px; }</style>
+#+HTML_HEAD: <style>h1,h2,h3,h4,h5,h6 { color: #A5573E; line-height: 1em; font-family: Helvetica, sans-serif; }</style>
+#+HTML_HEAD: <style>h1,h2,h3 { line-height: 1.4em; }</style>
+#+HTML_HEAD: <style>h1.title { font-size: 3em; }</style>
+#+HTML_HEAD: <style>.subtitle { font-size: 0.6em; }</style>
+#+HTML_HEAD: <style>h4,h5,h6 { font-size: 1em; }</style>
+#+HTML_HEAD: <style>.org-src-container { border: 1px solid #ccc; box-shadow: 3px 3px 3px #eee; font-family: Lucida Console, monospace; font-size: 80%; margin: 0px; padding: 0px 0px; position: relative; }</style>
+#+HTML_HEAD: <style>.org-src-container>pre { line-height: 1.2em; padding-top: 1.5em; margin: 0.5em; background-color: #404040; color: white; overflow: auto; }</style>
+#+HTML_HEAD: <style>.org-src-container>pre:before { display: block; position: absolute; background-color: #b3b3b3; top: 0; right: 0; padding: 0 0.2em 0 0.4em; border-bottom-left-radius: 8px; border: 0; color: white; font-size: 100%; font-family: Helvetica, sans-serif;}</style>
+#+HTML_HEAD: <style>pre.example { white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -o-pre-wrap; font-family: Lucida Console, monospace; font-size: 80%; background: #404040; color: white; display: block; padding: 0em; border: 2px solid black; }</style>
+#+HTML_HEAD: <style>blockquote { margin-bottom: 0.5em; padding: 0.5em; background-color: #FFF8DC; border-left: 2px solid #A5573E; border-left-color: rgb(255, 228, 102); display: block; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 5em; margin-inline-end: 5em; } </style>
+# Change the following to get wider output -- also note body style above
+#+HTML_HEAD: <style>#content { max-width: 60em; }</style>
+#+HTML_LINK_HOME: https://www.mitchr.me/
+#+HTML_LINK_UP: https://www.mitchr.me/FIXME
+# ######################################################################################################################################################.H.E.##
+
+#+ATTR_HTML: :border 2 solid #ccc :frame hsides :align center
+|          <r> | <l>                                          |
+|    *Author:* | /{{{author}}}/                               |
+|   *Updated:* | /{{{modification-time(%Y-%m-%d %H:%M:%S)}}}/ |
+| *Generated:* | /{{{time(%Y-%m-%d %H:%M:%S)}}}/              |
+#+ATTR_HTML: :align center
+Copyright \copy {{{time(%Y)}}} Mitch Richling. All rights reserved.
+
+#+TOC: headlines 5
+
+#        #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #
+#        #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #         #
+#   010  #    020  #    030  #    040  #    050  #    060  #    070  #    080  #    090  #    100  #    110  #    120  #    130  #    140  #    150  #    160  #    170  #    180  #    190  #    200  #    210  #    220  #    230  #    240  #    250  #    260  #    270  #    280  #    290  #
+# 345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+#        #         #         #         #         #         #         #         #         #         #         #         #         #         #         #       | #         #         #         #         #         #         #         #         #         #         #         #         #         #
+#        #         #         #         #         #         #         #         #         #         #         #         #         #         #         #       | #         #         #         #         #         #         #         #         #         #         #         #         #         #
+
+* Introduction
+:PROPERTIES:
+:CUSTOM_ID: introduction
+:END:
+
+Just some stuff I've written for the Casio Classpad II calculator.
+
+* Library Functions
+
+Functions intended to be placed in the =Library= folder.  The
+functions are contained inside eActivities so that one may pick and
+choose which functions they wish to have defined -- simply open the
+function strip, and evaluate the lines with the functions desired.
+
+** CAS Stuff (=mjrLib/mjrCAS=)
+:PROPERTIES:
+:CUSTOM_ID: mjrCAS
+:END:
+
+Just a couple simple algebraic manipulation short cuts.  
+
+ - *=tbmxs=*: Multiply top & bottom of a fraction by a factor.  The top & bottom are then separately expanded and simplified twice.
+ - *=xxs=*: Expand, Expand, Simplify
+
+** Physical Constants (=mjrLib/mjrConstants=)
+:PROPERTIES:
+:CUSTOM_ID: mjrConstants
+:END:
+
+All physical constants functions take the number of significant digits
+requested. A $0$ means to return all available digits.  All of these are
+from the 2018 NIST standard values.  Note many constants are defined
+in Casio's =Physium= application -- I just like to have these
+available in the keyboard function catalog because I use them quite
+frequently.
+
+Note: These all start with =c_= so they show up clumped together in
+the keyboard function catalog.
+
+ - *=c_c0=*: Speed of light (299792458)
+ - *=c_g=*: Standard acceleration of gravity (9.80665)
+ - *=c_G=*: Newtonian constant of gravitation (6.67430e-11)
+ - *=c_atm=*: Standard atmospheric pressure (101325)
+ - *=c_avogadro=*: Avogadro constant (6.02214076e23)
+
+** Integer Stuff (=mjrLib/mjrIntegers=)
+:PROPERTIES:
+:CUSTOM_ID: mjrIntegers
+:END:
+
+Most of these functions accept & return non-negative integers.  The
+idea is to be able to perform bit manipulation operations on regular
+integers.  We can provide binary-like input and output from these
+functions with the =bitI= and =bitO= functions.  It's no HP-16C, but
+it will work in a pinch.
+
+ - General Integer Stuff
+   - *=oddp=*: 1 if odd, 0 if even
+   - *=evenp=*: 1 if even, 0 if odd
+ - Interpreting decimal integers as binary and vice versa
+   - *=bitI=*: dec interpreted as bin
+   - *=bitO=*: bin interpreted as dec
+ - Bit Shifting
+   - *=bitSR=*: Shift right 1 bit
+   - *=bitSRn=*: Shift right n bits
+   - *=bitSL=*: Shift left 1 bit
+   - *=bitSLn=*: Shift left n bits
+ - Bit Counting
+   - *=intLog2=*: int of base 2 log
+   - *=bitSIZE=*: bits required
+   - *=bitCNT=*: Number of set bits
+   - *=bitCLZ=*: Number of left zeros
+ - Binary Bitwise logical operations on fixed sized integers
+   - *=bitANDn=*: N bit, bitwise and
+   - *=bitXORn=*: N bit, bitwise xor
+   - *=bitORn=*: N bit, bitwise or
+ - Binary Bitwise logical operations
+   - *=bitAND=*: bitwise and
+   - *=bitXOR=*: bitwise xor
+   - *=bitOR=*: bitwise or
+ - Bitwise logical negation (this function only exists in a fixed sized form)
+   - *=bitNOTn=*: N bit, bitwise not
+ - Lists of Bits (utility functions used behind the scenes)
+   - *=bitLIST=*: Reverse list of bits
+   - *=bitLISTn=*: Reverse list N bits
+   - *=bitULIST=*: Bit list to number
+
+** Linear Algebra (=mjrLib/mjrLinearAlg=)
+:PROPERTIES:
+:CUSTOM_ID: mjrLinearAlg
+:END:
+
+ - *=diagR=*: Diagonal for matrix (Matrix need not be square)
+ - *=dprod=*: Product of diagonal (Matrix need not be square)
+ - *=dsum=*: Diagonal Sum or trace  (Matrix need not be square)
+ - *=slvSys=*: Solve matrix equation
+ - *=augRREF=*: Augment to matrices together and RREF
+ - *=invLeft=*: Left inverse
+ - *=invRight=*: Right inverse
+ - *=LU2P=*: Return the value of $P$ given $M$, $L$, & $U$
+ - *=cPolyS=*: Characteristic polynomial via symbolic derivative
+ - *=cPolyN=*: Characteristic polynomial via polynomial interpolation
+
+** Misc Math (=mjrLib/mjrMiscMath=)
+:PROPERTIES:
+:CUSTOM_ID: mjrMiscMath
+:END:
+
+ - *=pt2ln=*: eq of line given 2 points (points provided as row vectors)
+ - *=pt2ray=*: eq of ray given 2 points (points provided as row vectors)
+
+** Polynomial Stuff (=mjrLib/mjrPolynomial=)
+:PROPERTIES:
+:CUSTOM_ID: mjrPolynomial
+:END:
+
+ - *=rt2ply=*: poly with given roots
+ - *=rt2plym=*: like rt2ply but monic
+ - *=slvPly=*: solve poly numerically
+ - *=compMtrx=*: Companion matrix
+
+** Repeated Measurement (=mjrLib/mjrRepMeas=)
+:PROPERTIES:
+:CUSTOM_ID: mjrRepMeas
+:END:
+
+I have a much more sophsticated solution for the HP-42S calculator: https://richmit.github.io/hp42/meas.html
+
+ - Mean & Standard Deviation
+   - *=repMesNS=*: Meas Stats (μ & σ)
+   - *=repMesNI=*: Meas Interval (μ±σ)
+ - Median & Interquartile Range
+   - *=repMesMS=*: Meas Stats 
+   - *=repMesMI=*: Meas Interval 
+
+** Trig Functions (=mjrLib/mjrTrig=)
+:PROPERTIES:
+:CUSTOM_ID: mjrTrig
+:END:
+
+ - *=csc=*: cosecant
+ - *=sec=*: secant
+ - *=cot=*: cotangent
+ - *=havers=*:  haversine: $\frac{1-\cos(x)}{2}$
+ - *=cis=*: Cosine-I-Sine: $\cos(x)+i\cdot\sin(x)$
+
+** Units Functions (=mjrLib/mjrUnits=)
+:PROPERTIES:
+:CUSTOM_ID: mjrUnits
+:END:
+
+Note: These all start with =u_= so they show up clumped together in
+the keyboard function catalog.
+
+ - Units (volume)
+   - *=u_gal_L=*: US Gallons to liters (A US gallon is about 0.83267 Imperial gallon)
+   - *=u_L_gal=*: liters to US Gallons
+ - Units (force)
+   - *=u_lb_kgf=*: US Pounds to kg force
+   - *=u_kgf_lb=*: kg force to US pounds
+   - *=u_N_lb=*: Newtons to US pounds
+   - *=u_lb_N=*: US Pounds to newtons
+ - Units (temp)
+   - *=u_F_C=*: Degrees Fahrenheit to Celsius
+   - *=u_C_F=*: Degrees Celsius to Fahrenheit
+   - *=u_K_C=*: Degrees Kelvin to Celsius
+   - *=u_C_K=*: Degrees Celsius to Kelvin
+ - Units (length)
+   - *=u_in_cm=*: International inches to centimeters (2.54 inches to the centimeter)
+   - *=u_cm_in=*: Centimeters to international inches
+   - *=u_mi_km=*: International miles to kilometers
+   - *=u_km_mi=*: kilometers to international miles
+
+* Programs (=mjrProg/=)
+:PROPERTIES:
+:CUSTOM_ID: mjrProg
+:END:
+
+ - *=jacobian=*: Compute the Jacobin matrix of an expression
+ - *=mkDmat=*: Make a diagonal matrix from a list, matrix, or vector of elements
+ - *=mkMat=*: Make a diagonal matrix from an index expression
+
+* Computational eActivities (=mjrComp/=)
+:PROPERTIES:
+:CUSTOM_ID: mjrComp
+:END:
+
+These are eActivities I saved off because they contain a general computational pattern I can reuse.
+
+ - *=FunCrt1D=*: Find the critical points of an expression in 1 variable
+ - *=FunCrt2D=*: Find the critical points of an expression in 2 variables
+ - *=CubicInterp=*: Cubic Interpolation between two points
+ - *=LinearInterp=*: Linear Interpolation between two points
+ - *=SolveTri=*: Solve triangles. I add cases as I encounter them, and so far I have ASA, SSS, SAS, & AAS.
