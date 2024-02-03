@@ -51,6 +51,9 @@ Copyright \copy {{{time(%Y)}}} Mitch Richling. All rights reserved.
 
 Just some stuff I've written for the Casio Classpad II calculator.
 
+All of the programs mentioned here may be foudn on github:
+https://github.com/richmit/classpad2
+
 * Library Functions
 
 Functions intended to be placed in the =Library= folder.  The
