@@ -8,7 +8,7 @@ This repo contains four directories:
    - Bit Manipulation
    - Linear Algebra
    - Polynomial Stuff
-   - Repeated Measurement with Uncertitanty
+   - Repeated Measurement with Uncertainty
    - Trig Functions
    - Units Conversions
  - mjrProg: A few programs
