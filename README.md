@@ -13,7 +13,7 @@ This repo contains four directories:
    - Units Conversions
  - mjrProg: A few programs
  - mjrComp: Computational eActivities
- - docs: Documentation (rendered `org-mode` files).
+ - docs: [Documentation](https://richmit.github.io/classpad2/) (rendered `org-mode` files).
 
 The documentation is also published here: [Docs](https://richmit.github.io/classpad2/)
 
