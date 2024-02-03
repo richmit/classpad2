@@ -7,7 +7,7 @@ This repo contains four directories:
  - mjrComp: Computational eActivities
  - docs: Documentation (rendered `org-mode` files).
 
-The documentation is also published here: [Docs](https://richmit.github.io/hp42/)
+The documentation is also published here: [Docs](https://richmit.github.io/classpad2/)
 
 Have fun!
 
