@@ -241,3 +241,11 @@ These are eActivities I saved off because they contain a general computational p
  - *=CubicInterp=*: Cubic Interpolation between two points
  - *=LinearInterp=*: Linear Interpolation between two points
  - *=SolveTri=*: Solve triangles. I add cases as I encounter them, and so far I have ASA, SSS, SAS, & AAS.
+
+* Formulas & Equations eActivities (=mjrEqn/=)
+
+These eActivities provide a reference & computational environments for various formulas & equations.
+
+ - *=Diode=*: Shockley Diode equation
+ - *=CurrentDiv=*: Current Divider
+ - *=VoltageDiv=*: Voltage Divider
