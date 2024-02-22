@@ -12,7 +12,7 @@ This repo contains four directories:
    - Trig Functions
    - Units Conversions
  - mjrProg: A few programs
- - mjrComp: Computational eActivities
+ - mjrComp: Computational eActivities -- eActivities I saved off because they contain a general computational pattern I can reuse.
  - mjrEqn: Equations
  - docs: [Documentation](https://richmit.github.io/classpad2/) (rendered `org-mode` files).
 
