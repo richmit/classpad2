@@ -51,15 +51,12 @@ Copyright \copy {{{time(%Y)}}} Mitch Richling. All rights reserved.
 
 Just some stuff I've written for the Casio Classpad II calculator.
 
-All of the programs mentioned here may be foudn on github:
-https://github.com/richmit/classpad2
+All of the programs mentioned here may be found on github: https://github.com/richmit/classpad2
 
 * Library Functions
 
-Functions intended to be placed in the =Library= folder.  The
-functions are contained inside eActivities so that one may pick and
-choose which functions they wish to have defined -- simply open the
-function strip, and evaluate the lines with the functions desired.
+Functions intended to be placed in the =Library= folder.  The functions are contained inside eActivities so that one may pick and choose which functions they
+wish to have defined -- simply open the function strip, and evaluate the lines with the functions desired.
 
 ** CAS Stuff (=mjrLib/mjrCAS=)
 :PROPERTIES:
@@ -76,15 +73,11 @@ Just a couple simple algebraic manipulation short cuts.
 :CUSTOM_ID: mjrConstants
 :END:
 
-All physical constants functions take the number of significant digits
-requested. A $0$ means to return all available digits.  All of these are
-from the 2018 NIST standard values.  Note many constants are defined
-in Casio's =Physium= application -- I just like to have these
-available in the keyboard function catalog because I use them quite
-frequently.
+All physical constants functions take the number of significant digits requested. A $0$ means to return all available digits.  All of these are from the 2018
+NIST standard values.  Note many constants are defined in Casio's =Physium= application -- I just like to have these available in the keyboard function
+catalog because I use them quite frequently.
 
-Note: These all start with =c_= so they show up clumped together in
-the keyboard function catalog.
+Note: These all start with =c_= so they show up clumped together in the keyboard function catalog.
 
  - *=c_c0=*: Speed of light (299792458)
  - *=c_g=*: Standard acceleration of gravity (9.80665)
@@ -97,11 +90,8 @@ the keyboard function catalog.
 :CUSTOM_ID: mjrIntegers
 :END:
 
-Most of these functions accept & return non-negative integers.  The
-idea is to be able to perform bit manipulation operations on regular
-integers.  We can provide binary-like input and output from these
-functions with the =bitI= and =bitO= functions.  It's no HP-16C, but
-it will work in a pinch.
+Most of these functions accept & return non-negative integers.  The idea is to be able to perform bit manipulation operations on regular integers.  We can
+provide binary-like input and output from these functions with the =bitI= and =bitO= functions.  It's no HP-16C, but it will work in a pinch.
 
  - General Integer Stuff
    - *=oddp=*: 1 if odd, 0 if even
