@@ -241,3 +241,19 @@ These eActivities provide a reference & computational environments for various f
  - *=Diode=*: Shockley Diode equation
  - *=CurrentDiv=*: Current Divider
  - *=VoltageDiv=*: Voltage Divider
+
+
+* Shift Key Assignments
+
+#+MACRO: HLTBC    @@html:<hr />@@
+#+MACRO: NBSP    @@html:&nbsp;@@
+
+#+ATTR_HTML: :frame box :rules all :align center :width 50%
+|          <c>           |          <c>          |           <c>           |          <c>           |              <c>               |                     <c>                      |
+| =approx= {{{HLTBC}}} = | =cut= {{{HLTBC}}} $x$ | =paste= {{{HLTBC}}} $y$ | =undo= {{{HLTBC}}} $z$ | $\sqrt{\square}$ {{{HLTBC}}} ^ | $\frac{\square}{\square}$ {{{HLTBC}}} $\div$ |
+#+ATTR_HTML: :frame box :rules all :align center :width 50%
+|              <c>              |             <c>             |            <c>             |                   <c>                   |               <c>               |
+|       [] {{{HLTBC}}} (        | {{{NBSP}}} {{{HLTBC}}} $7$  | {{{NBSP}}} {{{HLTBC}}} $8$ |       {{{NBSP}}} {{{HLTBC}}} $9$        | {{{NBSP}}} {{{HLTBC}}} $\times$ |
+|       {} {{{HLTBC}}} )        | $e^\square$ {{{HLTBC}}} $4$ |   $\ln$ {{{HLTBC}}} $5$    | $\log_\square(\square)$ {{{HLTBC}}} $6$ |   {{{NBSP}}}  {{{HLTBC}}} $-$   |
+|     $\vert$ {{{HLTBC}}} ,     |   $\sin$ {{{HLTBC}}} $1$    |   $\cos$ {{{HLTBC}}} $2$   |         $\tan$ {{{HLTBC}}} $3$          |     $\circ$ {{{HLTBC}}} $+$     |
+| $\Rightarrow$ {{{HLTBC}}} (-) |    $\pi$ {{{HLTBC}}} $0$    |     $i$ {{{HLTBC}}} .      |       $\angle($ {{{HLTBC}}} =EXP=       |     =ans= {{{HLTBC}}} =EXE=     |
