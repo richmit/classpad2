@@ -219,9 +219,8 @@ the keyboard function catalog.
  - *=jacobian=*: Compute the Jacobin matrix of an expression
  - *=mkDmat=*: Make a diagonal matrix from a list, matrix, or vector of elements
  - *=mkMat=*: Make a matrix from an index expression
- - *=newtonC=*: Solve complex equations with Newton's method.  
-# This one pauses every 10 iterations to ask if you want it to keep searching.
-# - *=newtonCC=*: Solve complex equations with Newton's method.  This one runs forever tyring to find a root.
+ - *=newtonC=*: Solve complex equations with Newton's method.  This one pauses every 10 iterations to ask if you want it to keep searching.
+ - *=newtonCC=*: Solve complex equations with Newton's method.  This one runs forever trying to find a root.
 
 * Computational eActivities (=mjrComp/=)
 :PROPERTIES:
