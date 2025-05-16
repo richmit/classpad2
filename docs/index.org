@@ -132,7 +132,8 @@ provide binary-like input and output from these functions with the =bitI= and =b
  - *=diagR=*: Diagonal for matrix (Matrix need not be square)
  - *=dprod=*: Product of diagonal (Matrix need not be square)
  - *=dsum=*: Diagonal Sum or trace  (Matrix need not be square)
- - *=slvSys=*: Solve matrix equation
+ - *=slvLinEq=*: Solve matrix equation
+ - *=slvLinODEq=*: Solve over determined matrix equation
  - *=augRREF=*: Augment to matrices together and RREF
  - *=invLeft=*: Left inverse
  - *=invRight=*: Right inverse
@@ -218,7 +219,9 @@ the keyboard function catalog.
  - *=jacobian=*: Compute the Jacobin matrix of an expression
  - *=mkDmat=*: Make a diagonal matrix from a list, matrix, or vector of elements
  - *=mkMat=*: Make a matrix from an index expression
- - *=newtonC=*: Solve complex equations with Newton's method
+ - *=newtonC=*: Solve complex equations with Newton's method.  
+# This one pauses every 10 iterations to ask if you want it to keep searching.
+# - *=newtonCC=*: Solve complex equations with Newton's method.  This one runs forever tyring to find a root.
 
 * Computational eActivities (=mjrComp/=)
 :PROPERTIES:

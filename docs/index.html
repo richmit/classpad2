@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-03-05 Tue 10:57 -->
+<!-- 2025-05-16 Fri 16:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=1024, initial-scale=1" />
 <title>Classpad II Stuff</title>
@@ -11,7 +11,7 @@
 <meta name="description" content="Some Random Stuff For Classpad II" />
 <meta name="keywords" content="Casio" />
 <meta name="generator" content="Org Mode" />
-<style>
+<style type="text/css">
   #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
@@ -263,17 +263,17 @@
 
 <tr>
 <td class="org-right"><b>Updated:</b></td>
-<td class="org-left"><i>2024-03-05 10:57:05</i></td>
+<td class="org-left"><i>2025-05-16 16:53:31</i></td>
 </tr>
 
 <tr>
 <td class="org-right"><b>Generated:</b></td>
-<td class="org-left"><i>2024-03-05 10:57:05</i></td>
+<td class="org-left"><i>2025-05-16 16:53:32</i></td>
 </tr>
 </tbody>
 </table>
 <p align="center">
-Copyright &copy; 2024 Mitch Richling. All rights reserved.
+Copyright &copy; 2025 Mitch Richling. All rights reserved.
 </p>
 
 <div id="table-of-contents" role="doc-toc">
@@ -281,7 +281,7 @@ Copyright &copy; 2024 Mitch Richling. All rights reserved.
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#org4d8e33c">2. Library Functions</a>
+<li><a href="#org2267fb8">2. Library Functions</a>
 <ul>
 <li><a href="#mjrCAS">2.1. CAS Stuff (<code>mjrLib/mjrCAS</code>)</a></li>
 <li><a href="#mjrConstants">2.2. Physical Constants (<code>mjrLib/mjrConstants</code>)</a></li>
@@ -296,12 +296,11 @@ Copyright &copy; 2024 Mitch Richling. All rights reserved.
 </li>
 <li><a href="#mjrProg">3. Programs (<code>mjrProg/</code>)</a></li>
 <li><a href="#mjrComp">4. Computational eActivities (<code>mjrComp/</code>)</a></li>
-<li><a href="#org1a0c8b8">5. Formulas &amp; Equations eActivities (<code>mjrEqn/</code>)</a></li>
-<li><a href="#org1fb4d82">6. Shift Key Assignments</a></li>
+<li><a href="#org302a6b9">5. Formulas &amp; Equations eActivities (<code>mjrEqn/</code>)</a></li>
+<li><a href="#org67972c9">6. Shift Key Assignments</a></li>
 </ul>
 </div>
 </div>
-
 <div id="outline-container-introduction" class="outline-2">
 <h2 id="introduction"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-introduction">
@@ -314,16 +313,14 @@ All of the programs mentioned here may be found on github: <a href="https://gith
 </p>
 </div>
 </div>
-
-<div id="outline-container-org4d8e33c" class="outline-2">
-<h2 id="org4d8e33c"><span class="section-number-2">2.</span> Library Functions</h2>
+<div id="outline-container-org2267fb8" class="outline-2">
+<h2 id="org2267fb8"><span class="section-number-2">2.</span> Library Functions</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Functions intended to be placed in the <code>Library</code> folder.  The functions are contained inside eActivities so that one may pick and choose which functions they
 wish to have defined &#x2013; simply open the function strip, and evaluate the lines with the functions desired.
 </p>
 </div>
-
 <div id="outline-container-mjrCAS" class="outline-3">
 <h3 id="mjrCAS"><span class="section-number-3">2.1.</span> CAS Stuff (<code>mjrLib/mjrCAS</code>)</h3>
 <div class="outline-text-3" id="text-mjrCAS">
@@ -337,7 +334,6 @@ Just a couple simple algebraic manipulation short cuts.
 </ul>
 </div>
 </div>
-
 <div id="outline-container-mjrConstants" class="outline-3">
 <h3 id="mjrConstants"><span class="section-number-3">2.2.</span> Physical Constants (<code>mjrLib/mjrConstants</code>)</h3>
 <div class="outline-text-3" id="text-mjrConstants">
@@ -360,7 +356,6 @@ Note: These all start with <code>c_</code> so they show up clumped together in t
 </ul>
 </div>
 </div>
-
 <div id="outline-container-mjrIntegers" class="outline-3">
 <h3 id="mjrIntegers"><span class="section-number-3">2.3.</span> Integer Stuff (<code>mjrLib/mjrIntegers</code>)</h3>
 <div class="outline-text-3" id="text-mjrIntegers">
@@ -419,7 +414,6 @@ provide binary-like input and output from these functions with the <code>bitI</c
 </ul>
 </div>
 </div>
-
 <div id="outline-container-mjrLinearAlg" class="outline-3">
 <h3 id="mjrLinearAlg"><span class="section-number-3">2.4.</span> Linear Algebra (<code>mjrLib/mjrLinearAlg</code>)</h3>
 <div class="outline-text-3" id="text-mjrLinearAlg">
@@ -427,7 +421,8 @@ provide binary-like input and output from these functions with the <code>bitI</c
 <li><b><code>diagR</code></b>: Diagonal for matrix (Matrix need not be square)</li>
 <li><b><code>dprod</code></b>: Product of diagonal (Matrix need not be square)</li>
 <li><b><code>dsum</code></b>: Diagonal Sum or trace  (Matrix need not be square)</li>
-<li><b><code>slvSys</code></b>: Solve matrix equation</li>
+<li><b><code>slvLinEq</code></b>: Solve matrix equation</li>
+<li><b><code>slvLinODEq</code></b>: Solve over determined matrix equation</li>
 <li><b><code>augRREF</code></b>: Augment to matrices together and RREF</li>
 <li><b><code>invLeft</code></b>: Left inverse</li>
 <li><b><code>invRight</code></b>: Right inverse</li>
@@ -437,7 +432,6 @@ provide binary-like input and output from these functions with the <code>bitI</c
 </ul>
 </div>
 </div>
-
 <div id="outline-container-mjrMiscMath" class="outline-3">
 <h3 id="mjrMiscMath"><span class="section-number-3">2.5.</span> Misc Math (<code>mjrLib/mjrMiscMath</code>)</h3>
 <div class="outline-text-3" id="text-mjrMiscMath">
@@ -447,7 +441,6 @@ provide binary-like input and output from these functions with the <code>bitI</c
 </ul>
 </div>
 </div>
-
 <div id="outline-container-mjrPolynomial" class="outline-3">
 <h3 id="mjrPolynomial"><span class="section-number-3">2.6.</span> Polynomial Stuff (<code>mjrLib/mjrPolynomial</code>)</h3>
 <div class="outline-text-3" id="text-mjrPolynomial">
@@ -459,7 +452,6 @@ provide binary-like input and output from these functions with the <code>bitI</c
 </ul>
 </div>
 </div>
-
 <div id="outline-container-mjrRepMeas" class="outline-3">
 <h3 id="mjrRepMeas"><span class="section-number-3">2.7.</span> Repeated Measurement (<code>mjrLib/mjrRepMeas</code>)</h3>
 <div class="outline-text-3" id="text-mjrRepMeas">
@@ -481,7 +473,6 @@ I have a much more sophsticated solution for the HP-42S calculator: <a href="htt
 </ul>
 </div>
 </div>
-
 <div id="outline-container-mjrTrig" class="outline-3">
 <h3 id="mjrTrig"><span class="section-number-3">2.8.</span> Trig Functions (<code>mjrLib/mjrTrig</code>)</h3>
 <div class="outline-text-3" id="text-mjrTrig">
@@ -494,7 +485,6 @@ I have a much more sophsticated solution for the HP-42S calculator: <a href="htt
 </ul>
 </div>
 </div>
-
 <div id="outline-container-mjrUnits" class="outline-3">
 <h3 id="mjrUnits"><span class="section-number-3">2.9.</span> Units Functions (<code>mjrLib/mjrUnits</code>)</h3>
 <div class="outline-text-3" id="text-mjrUnits">
@@ -534,7 +524,6 @@ the keyboard function catalog.
 </div>
 </div>
 </div>
-
 <div id="outline-container-mjrProg" class="outline-2">
 <h2 id="mjrProg"><span class="section-number-2">3.</span> Programs (<code>mjrProg/</code>)</h2>
 <div class="outline-text-2" id="text-mjrProg">
@@ -542,11 +531,10 @@ the keyboard function catalog.
 <li><b><code>jacobian</code></b>: Compute the Jacobin matrix of an expression</li>
 <li><b><code>mkDmat</code></b>: Make a diagonal matrix from a list, matrix, or vector of elements</li>
 <li><b><code>mkMat</code></b>: Make a matrix from an index expression</li>
-<li><b><code>newtonC</code></b>: Solve complex equations with Newton's method</li>
+<li><b><code>newtonC</code></b>: Solve complex equations with Newton's method.</li>
 </ul>
 </div>
 </div>
-
 <div id="outline-container-mjrComp" class="outline-2">
 <h2 id="mjrComp"><span class="section-number-2">4.</span> Computational eActivities (<code>mjrComp/</code>)</h2>
 <div class="outline-text-2" id="text-mjrComp">
@@ -564,9 +552,8 @@ These are eActivities I saved off because they contain a general computational p
 </ul>
 </div>
 </div>
-
-<div id="outline-container-org1a0c8b8" class="outline-2">
-<h2 id="org1a0c8b8"><span class="section-number-2">5.</span> Formulas &amp; Equations eActivities (<code>mjrEqn/</code>)</h2>
+<div id="outline-container-org302a6b9" class="outline-2">
+<h2 id="org302a6b9"><span class="section-number-2">5.</span> Formulas &amp; Equations eActivities (<code>mjrEqn/</code>)</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 These eActivities provide a reference &amp; computational environments for various formulas &amp; equations.
@@ -579,10 +566,8 @@ These eActivities provide a reference &amp; computational environments for vario
 </ul>
 </div>
 </div>
-
-
-<div id="outline-container-org1fb4d82" class="outline-2">
-<h2 id="org1fb4d82"><span class="section-number-2">6.</span> Shift Key Assignments</h2>
+<div id="outline-container-org67972c9" class="outline-2">
+<h2 id="org67972c9"><span class="section-number-2">6.</span> Shift Key Assignments</h2>
 <div class="outline-text-2" id="text-6">
 <table border="2" cellspacing="0" cellpadding="6" rules="all" frame="box" align="center" width="50%">
 
