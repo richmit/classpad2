@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-16 Fri 16:56 -->
+<!-- 2025-05-17 Sat 14:34 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=1024, initial-scale=1" />
 <title>Classpad II Stuff</title>
@@ -263,12 +263,12 @@
 
 <tr>
 <td class="org-right"><b>Updated:</b></td>
-<td class="org-left"><i>2025-05-16 16:56:48</i></td>
+<td class="org-left"><i>2025-05-17 14:34:25</i></td>
 </tr>
 
 <tr>
 <td class="org-right"><b>Generated:</b></td>
-<td class="org-left"><i>2025-05-16 16:56:48</i></td>
+<td class="org-left"><i>2025-05-17 14:34:27</i></td>
 </tr>
 </tbody>
 </table>
@@ -281,7 +281,7 @@ Copyright &copy; 2025 Mitch Richling. All rights reserved.
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#orga09fdda">2. Library Functions</a>
+<li><a href="#org1112beb">2. Library Functions</a>
 <ul>
 <li><a href="#mjrCAS">2.1. CAS Stuff (<code>mjrLib/mjrCAS</code>)</a></li>
 <li><a href="#mjrConstants">2.2. Physical Constants (<code>mjrLib/mjrConstants</code>)</a></li>
@@ -296,8 +296,8 @@ Copyright &copy; 2025 Mitch Richling. All rights reserved.
 </li>
 <li><a href="#mjrProg">3. Programs (<code>mjrProg/</code>)</a></li>
 <li><a href="#mjrComp">4. Computational eActivities (<code>mjrComp/</code>)</a></li>
-<li><a href="#orgb50ba2c">5. Formulas &amp; Equations eActivities (<code>mjrEqn/</code>)</a></li>
-<li><a href="#org9252a02">6. Shift Key Assignments</a></li>
+<li><a href="#org9178685">5. Formulas &amp; Equations eActivities (<code>mjrEqn/</code>)</a></li>
+<li><a href="#orge5e6f2f">6. Shift Key Assignments</a></li>
 </ul>
 </div>
 </div>
@@ -313,8 +313,8 @@ All of the programs mentioned here may be found on github: <a href="https://gith
 </p>
 </div>
 </div>
-<div id="outline-container-orga09fdda" class="outline-2">
-<h2 id="orga09fdda"><span class="section-number-2">2.</span> Library Functions</h2>
+<div id="outline-container-org1112beb" class="outline-2">
+<h2 id="org1112beb"><span class="section-number-2">2.</span> Library Functions</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Functions intended to be placed in the <code>Library</code> folder.  The functions are contained inside eActivities so that one may pick and choose which functions they
@@ -329,8 +329,8 @@ Just a couple simple algebraic manipulation short cuts.
 </p>
 
 <ul class="org-ul">
-<li><b><code>tbmxs</code></b>: Multiply top &amp; bottom of a fraction by a factor.  The top &amp; bottom are then separately expanded and simplified twice.</li>
-<li><b><code>xxs</code></b>: Expand, Expand, Simplify</li>
+<li><b><code>tbmxs(expression)</code></b>: Multiply top &amp; bottom of a fraction by a factor.  The top &amp; bottom are then separately expanded and simplified twice.</li>
+<li><b><code>xxs(expression)</code></b>: Expand, Expand, Simplify</li>
 </ul>
 </div>
 </div>
@@ -348,11 +348,11 @@ Note: These all start with <code>c_</code> so they show up clumped together in t
 </p>
 
 <ul class="org-ul">
-<li><b><code>c_c0</code></b>: Speed of light (299792458)</li>
-<li><b><code>c_g</code></b>: Standard acceleration of gravity (9.80665)</li>
-<li><b><code>c_G</code></b>: Newtonian constant of gravitation (6.67430e-11)</li>
-<li><b><code>c_atm</code></b>: Standard atmospheric pressure (101325)</li>
-<li><b><code>c_avogadro</code></b>: Avogadro constant (6.02214076e23)</li>
+<li><b><code>c_c0(d)</code></b>: Speed of light (299792458)</li>
+<li><b><code>c_g(d)</code></b>: Standard acceleration of gravity (9.80665)</li>
+<li><b><code>c_G(d)</code></b>: Newtonian constant of gravitation (6.67430e-11)</li>
+<li><b><code>c_atm(d)</code></b>: Standard atmospheric pressure (101325)</li>
+<li><b><code>c_avogadro(d)</code></b>: Avogadro constant (6.02214076e23)</li>
 </ul>
 </div>
 </div>
@@ -367,49 +367,46 @@ provide binary-like input and output from these functions with the <code>bitI</c
 <ul class="org-ul">
 <li>General Integer Stuff
 <ul class="org-ul">
-<li><b><code>oddp</code></b>: 1 if odd, 0 if even</li>
-<li><b><code>evenp</code></b>: 1 if even, 0 if odd</li>
+<li><b><code>oddp(a)</code></b>: 1 if odd, 0 if even</li>
+<li><b><code>evenp(a)</code></b>: 1 if even, 0 if odd</li>
 </ul></li>
 <li>Interpreting decimal integers as binary and vice versa
 <ul class="org-ul">
-<li><b><code>bitI</code></b>: dec interpreted as bin</li>
-<li><b><code>bitO</code></b>: bin interpreted as dec</li>
+<li><b><code>bitI(a)</code></b>: dec interpreted as bin</li>
+<li><b><code>bitO(a)</code></b>: bin interpreted as dec</li>
 </ul></li>
 <li>Bit Shifting
 <ul class="org-ul">
-<li><b><code>bitSR</code></b>: Shift right 1 bit</li>
-<li><b><code>bitSRn</code></b>: Shift right n bits</li>
-<li><b><code>bitSL</code></b>: Shift left 1 bit</li>
-<li><b><code>bitSLn</code></b>: Shift left n bits</li>
+<li><b><code>bitSR(a)</code></b>: Shift right 1 bit</li>
+<li><b><code>bitSRn(a,n)</code></b>: Shift right n bits</li>
+<li><b><code>bitSL(a)</code></b>: Shift left 1 bit</li>
+<li><b><code>bitSLn(a,n)</code></b>: Shift left n bits</li>
 </ul></li>
 <li>Bit Counting
 <ul class="org-ul">
-<li><b><code>intLog2</code></b>: int of base 2 log</li>
-<li><b><code>bitSIZE</code></b>: bits required</li>
-<li><b><code>bitCNT</code></b>: Number of set bits</li>
-<li><b><code>bitCLZ</code></b>: Number of left zeros</li>
+<li><b><code>intLog2(a)</code></b>: Int of base 2 log</li>
+<li><b><code>bitSIZE(a)</code></b>: Bits required</li>
+<li><b><code>bitCNT(a)</code></b>: Number of set bits</li>
+<li><b><code>bitCLZ(a)</code></b>: Number of left zeros</li>
 </ul></li>
 <li>Binary Bitwise logical operations on fixed sized integers
 <ul class="org-ul">
-<li><b><code>bitANDn</code></b>: N bit, bitwise and</li>
-<li><b><code>bitXORn</code></b>: N bit, bitwise xor</li>
-<li><b><code>bitORn</code></b>: N bit, bitwise or</li>
+<li><b><code>bitANDn(a,b,n)</code></b>: N bit, bitwise and</li>
+<li><b><code>bitXORn(a,b,n)</code></b>: N bit, bitwise xor</li>
+<li><b><code>bitORn(a,b,n)</code></b>: N bit, bitwise or</li>
+<li><b><code>bitNOTn(a,b,n)</code></b>: N bit, bitwise not</li>
 </ul></li>
 <li>Binary Bitwise logical operations
 <ul class="org-ul">
-<li><b><code>bitAND</code></b>: bitwise and</li>
-<li><b><code>bitXOR</code></b>: bitwise xor</li>
-<li><b><code>bitOR</code></b>: bitwise or</li>
-</ul></li>
-<li>Bitwise logical negation (this function only exists in a fixed sized form)
-<ul class="org-ul">
-<li><b><code>bitNOTn</code></b>: N bit, bitwise not</li>
+<li><b><code>bitAND(a,b)</code></b>: Bitwise and</li>
+<li><b><code>bitXOR(a,b)</code></b>: Bitwise xor</li>
+<li><b><code>bitOR(a,b)</code></b>: Bitwise or</li>
 </ul></li>
 <li>Lists of Bits (utility functions used behind the scenes)
 <ul class="org-ul">
-<li><b><code>bitLIST</code></b>: Reverse list of bits</li>
-<li><b><code>bitLISTn</code></b>: Reverse list N bits</li>
-<li><b><code>bitULIST</code></b>: Bit list to number</li>
+<li><b><code>bitLIST(a)</code></b>: Reverse list of bits</li>
+<li><b><code>bitLISTn(a,n)</code></b>: Reverse list N bits</li>
+<li><b><code>bitULIST(a)</code></b>: Bit list to number</li>
 </ul></li>
 </ul>
 </div>
@@ -418,17 +415,17 @@ provide binary-like input and output from these functions with the <code>bitI</c
 <h3 id="mjrLinearAlg"><span class="section-number-3">2.4.</span> Linear Algebra (<code>mjrLib/mjrLinearAlg</code>)</h3>
 <div class="outline-text-3" id="text-mjrLinearAlg">
 <ul class="org-ul">
-<li><b><code>diagR</code></b>: Diagonal for matrix (Matrix need not be square)</li>
-<li><b><code>dprod</code></b>: Product of diagonal (Matrix need not be square)</li>
-<li><b><code>dsum</code></b>: Diagonal Sum or trace  (Matrix need not be square)</li>
-<li><b><code>slvLinEq</code></b>: Solve matrix equation</li>
-<li><b><code>slvLinODEq</code></b>: Solve over determined matrix equation</li>
-<li><b><code>augRREF</code></b>: Augment to matrices together and RREF</li>
-<li><b><code>invLeft</code></b>: Left inverse</li>
-<li><b><code>invRight</code></b>: Right inverse</li>
-<li><b><code>LU2P</code></b>: Return the value of \(P\) given \(M\), \(L\), &amp; \(U\)</li>
-<li><b><code>cPolyS</code></b>: Characteristic polynomial via symbolic derivative</li>
-<li><b><code>cPolyN</code></b>: Characteristic polynomial via polynomial interpolation</li>
+<li><b><code>diagR(M)</code></b>: Diagonal for matrix (Matrix need not be square)</li>
+<li><b><code>dprod(M)</code></b>: Product of diagonal (Matrix need not be square)</li>
+<li><b><code>dsum(M)</code></b>: Diagonal Sum or trace  (Matrix need not be square)</li>
+<li><b><code>slvLinEq(M,B)</code></b>: Solve matrix equation</li>
+<li><b><code>slvLinODEq(M,B)</code></b>: Solve over determined matrix equation</li>
+<li><b><code>augRREF(M,B)</code></b>: Augment to matrices together and RREF</li>
+<li><b><code>invLeft(M)</code></b>: Left inverse</li>
+<li><b><code>invRight(M)</code></b>: Right inverse</li>
+<li><b><code>LU2P(M,L,U)</code></b>: Return the value of \(P\) for \(LU\) decomposition.</li>
+<li><b><code>cPolyS(M)</code></b>: Characteristic polynomial via symbolic computation</li>
+<li><b><code>cPolyN(M)</code></b>: Characteristic polynomial via numeric interpolation</li>
 </ul>
 </div>
 </div>
@@ -436,8 +433,8 @@ provide binary-like input and output from these functions with the <code>bitI</c
 <h3 id="mjrMiscMath"><span class="section-number-3">2.5.</span> Misc Math (<code>mjrLib/mjrMiscMath</code>)</h3>
 <div class="outline-text-3" id="text-mjrMiscMath">
 <ul class="org-ul">
-<li><b><code>pt2ln</code></b>: eq of line given 2 points (points provided as row vectors)</li>
-<li><b><code>pt2ray</code></b>: eq of ray given 2 points (points provided as row vectors)</li>
+<li><b><code>pt2ln(p1_row_vector,p2_row_vector)</code></b>: Equation for line given 2 points</li>
+<li><b><code>pt2ray(start_point_row_vector,end_point_row_vector)</code></b>: Equation for ray given 2 points</li>
 </ul>
 </div>
 </div>
@@ -445,10 +442,10 @@ provide binary-like input and output from these functions with the <code>bitI</c
 <h3 id="mjrPolynomial"><span class="section-number-3">2.6.</span> Polynomial Stuff (<code>mjrLib/mjrPolynomial</code>)</h3>
 <div class="outline-text-3" id="text-mjrPolynomial">
 <ul class="org-ul">
-<li><b><code>rt2ply</code></b>: poly with given roots</li>
-<li><b><code>rt2plym</code></b>: like rt2ply but monic</li>
-<li><b><code>slvPly</code></b>: solve poly numerically</li>
-<li><b><code>compMtrx</code></b>: Companion matrix</li>
+<li><b><code>rt2ply(root_list)</code></b>: Polynomial with given roots</li>
+<li><b><code>rt2plym(root_list)</code></b>: Like <b><code>rt2plym</code></b> but the returned polynomial is monic</li>
+<li><b><code>slvPly(polynomial_coefficients_list)</code></b>: Solve polynomial numerically</li>
+<li><b><code>compMtrx(polynomial_coefficients_list)</code></b>: Companion matrix</li>
 </ul>
 </div>
 </div>
@@ -462,13 +459,13 @@ I have a much more sophsticated solution for the HP-42S calculator: <a href="htt
 <ul class="org-ul">
 <li>Mean &amp; Standard Deviation
 <ul class="org-ul">
-<li><b><code>repMesNS</code></b>: Meas Stats (μ &amp; σ)</li>
-<li><b><code>repMesNI</code></b>: Meas Interval (μ±σ)</li>
+<li><b><code>repMesNS(list_of_measurements)</code></b>: Meas Stats (μ &amp; σ)</li>
+<li><b><code>repMesNI(list_of_measurements)</code></b>: Meas Interval (μ±σ)</li>
 </ul></li>
 <li>Median &amp; Interquartile Range
 <ul class="org-ul">
-<li><b><code>repMesMS</code></b>: Meas Stats</li>
-<li><b><code>repMesMI</code></b>: Meas Interval</li>
+<li><b><code>repMesMS(list_of_measurements)</code></b>: Meas Stats</li>
+<li><b><code>repMesMI(list_of_measurements)</code></b>: Meas Interval</li>
 </ul></li>
 </ul>
 </div>
@@ -477,11 +474,11 @@ I have a much more sophsticated solution for the HP-42S calculator: <a href="htt
 <h3 id="mjrTrig"><span class="section-number-3">2.8.</span> Trig Functions (<code>mjrLib/mjrTrig</code>)</h3>
 <div class="outline-text-3" id="text-mjrTrig">
 <ul class="org-ul">
-<li><b><code>csc</code></b>: cosecant</li>
-<li><b><code>sec</code></b>: secant</li>
-<li><b><code>cot</code></b>: cotangent</li>
-<li><b><code>havers</code></b>:  haversine: \(\frac{1-\cos(x)}{2}\)</li>
-<li><b><code>cis</code></b>: Cosine-I-Sine: \(\cos(x)+i\cdot\sin(x)\)</li>
+<li><b><code>csc(angle)</code></b>: cosecant</li>
+<li><b><code>sec(angle)</code></b>: secant</li>
+<li><b><code>cot(angle)</code></b>: cotangent</li>
+<li><b><code>havers(angle)</code></b>:  haversine: \(\frac{1-\cos(x)}{2}\)</li>
+<li><b><code>cis(angle)</code></b>: Cosine-I-Sine: \(\cos(x)+i\cdot\sin(x)\)</li>
 </ul>
 </div>
 </div>
@@ -496,29 +493,29 @@ the keyboard function catalog.
 <ul class="org-ul">
 <li>Units (volume)
 <ul class="org-ul">
-<li><b><code>u_gal_L</code></b>: US Gallons to liters (A US gallon is about 0.83267 Imperial gallon)</li>
-<li><b><code>u_L_gal</code></b>: liters to US Gallons</li>
+<li><b><code>u_gal_L(v)</code></b>: US Gallons to liters (A US gallon is about 0.83267 Imperial gallon)</li>
+<li><b><code>u_L_gal(v)</code></b>: liters to US Gallons</li>
 </ul></li>
 <li>Units (force)
 <ul class="org-ul">
-<li><b><code>u_lb_kgf</code></b>: US Pounds to kg force</li>
-<li><b><code>u_kgf_lb</code></b>: kg force to US pounds</li>
-<li><b><code>u_N_lb</code></b>: Newtons to US pounds</li>
-<li><b><code>u_lb_N</code></b>: US Pounds to newtons</li>
+<li><b><code>u_lb_kgf(v)</code></b>: US Pounds to kg force</li>
+<li><b><code>u_kgf_lb(v)</code></b>: kg force to US pounds</li>
+<li><b><code>u_N_lb(v)</code></b>: Newtons to US pounds</li>
+<li><b><code>u_lb_N(v)</code></b>: US Pounds to newtons</li>
 </ul></li>
 <li>Units (temp)
 <ul class="org-ul">
-<li><b><code>u_F_C</code></b>: Degrees Fahrenheit to Celsius</li>
-<li><b><code>u_C_F</code></b>: Degrees Celsius to Fahrenheit</li>
-<li><b><code>u_K_C</code></b>: Degrees Kelvin to Celsius</li>
-<li><b><code>u_C_K</code></b>: Degrees Celsius to Kelvin</li>
+<li><b><code>u_F_C(v)</code></b>: Degrees Fahrenheit to Celsius</li>
+<li><b><code>u_C_F(v)</code></b>: Degrees Celsius to Fahrenheit</li>
+<li><b><code>u_K_C(v)</code></b>: Degrees Kelvin to Celsius</li>
+<li><b><code>u_C_K(v)</code></b>: Degrees Celsius to Kelvin</li>
 </ul></li>
 <li>Units (length)
 <ul class="org-ul">
-<li><b><code>u_in_cm</code></b>: International inches to centimeters (2.54 inches to the centimeter)</li>
-<li><b><code>u_cm_in</code></b>: Centimeters to international inches</li>
-<li><b><code>u_mi_km</code></b>: International miles to kilometers</li>
-<li><b><code>u_km_mi</code></b>: kilometers to international miles</li>
+<li><b><code>u_in_cm(v)</code></b>: International inches to centimeters (2.54 inches to the centimeter)</li>
+<li><b><code>u_cm_in(v)</code></b>: Centimeters to international inches</li>
+<li><b><code>u_mi_km(v)</code></b>: International miles to kilometers</li>
+<li><b><code>u_km_mi(v)</code></b>: kilometers to international miles</li>
 </ul></li>
 </ul>
 </div>
@@ -528,11 +525,11 @@ the keyboard function catalog.
 <h2 id="mjrProg"><span class="section-number-2">3.</span> Programs (<code>mjrProg/</code>)</h2>
 <div class="outline-text-2" id="text-mjrProg">
 <ul class="org-ul">
-<li><b><code>jacobian</code></b>: Compute the Jacobin matrix of an expression</li>
-<li><b><code>mkDmat</code></b>: Make a diagonal matrix from a list, matrix, or vector of elements</li>
-<li><b><code>mkMat</code></b>: Make a matrix from an index expression</li>
-<li><b><code>newtonC</code></b>: Solve complex equations with Newton's method.  This one pauses every 10 iterations to ask if you want it to keep searching.</li>
-<li><b><code>newtonCC</code></b>: Solve complex equations with Newton's method.  This one runs forever trying to find a root.</li>
+<li><b><code>jacobian(expression_in_x_y_and_z)</code></b>: Compute the Jacobin matrix of an expression</li>
+<li><b><code>mkDmat(diag_as_list_matrix_or_vector)</code></b>: Make a diagonal matrix</li>
+<li><b><code>mkMat(expression_in_x_and_y, number_of_rows, number_of_columns)</code></b>: Make a matrix from an index expression</li>
+<li><b><code>newtonC(expression_in_x, initial_guess, epsilon)</code></b>: Solve complex equations with Newton's method.  Query user every 10 iterations to continue.</li>
+<li><b><code>newtonCC(expression_in_x, initial_guess, epsilon)</code></b>: Solve complex equations with Newton's method.  Runs forever trying to find a root.</li>
 </ul>
 </div>
 </div>
@@ -553,8 +550,8 @@ These are eActivities I saved off because they contain a general computational p
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb50ba2c" class="outline-2">
-<h2 id="orgb50ba2c"><span class="section-number-2">5.</span> Formulas &amp; Equations eActivities (<code>mjrEqn/</code>)</h2>
+<div id="outline-container-org9178685" class="outline-2">
+<h2 id="org9178685"><span class="section-number-2">5.</span> Formulas &amp; Equations eActivities (<code>mjrEqn/</code>)</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 These eActivities provide a reference &amp; computational environments for various formulas &amp; equations.
@@ -567,8 +564,8 @@ These eActivities provide a reference &amp; computational environments for vario
 </ul>
 </div>
 </div>
-<div id="outline-container-org9252a02" class="outline-2">
-<h2 id="org9252a02"><span class="section-number-2">6.</span> Shift Key Assignments</h2>
+<div id="outline-container-orge5e6f2f" class="outline-2">
+<h2 id="orge5e6f2f"><span class="section-number-2">6.</span> Shift Key Assignments</h2>
 <div class="outline-text-2" id="text-6">
 <table border="2" cellspacing="0" cellpadding="6" rules="all" frame="box" align="center" width="50%">
 

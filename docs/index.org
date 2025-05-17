@@ -65,8 +65,8 @@ wish to have defined -- simply open the function strip, and evaluate the lines w
 
 Just a couple simple algebraic manipulation short cuts.  
 
- - *=tbmxs=*: Multiply top & bottom of a fraction by a factor.  The top & bottom are then separately expanded and simplified twice.
- - *=xxs=*: Expand, Expand, Simplify
+ - *=tbmxs(expression)=*: Multiply top & bottom of a fraction by a factor.  The top & bottom are then separately expanded and simplified twice.
+ - *=xxs(expression)=*: Expand, Expand, Simplify
 
 ** Physical Constants (=mjrLib/mjrConstants=)
 :PROPERTIES:
@@ -79,11 +79,11 @@ catalog because I use them quite frequently.
 
 Note: These all start with =c_= so they show up clumped together in the keyboard function catalog.
 
- - *=c_c0=*: Speed of light (299792458)
- - *=c_g=*: Standard acceleration of gravity (9.80665)
- - *=c_G=*: Newtonian constant of gravitation (6.67430e-11)
- - *=c_atm=*: Standard atmospheric pressure (101325)
- - *=c_avogadro=*: Avogadro constant (6.02214076e23)
+ - *=c_c0(d)=*: Speed of light (299792458)
+ - *=c_g(d)=*: Standard acceleration of gravity (9.80665)
+ - *=c_G(d)=*: Newtonian constant of gravitation (6.67430e-11)
+ - *=c_atm(d)=*: Standard atmospheric pressure (101325)
+ - *=c_avogadro(d)=*: Avogadro constant (6.02214076e23)
 
 ** Integer Stuff (=mjrLib/mjrIntegers=)
 :PROPERTIES:
@@ -94,70 +94,69 @@ Most of these functions accept & return non-negative integers.  The idea is to b
 provide binary-like input and output from these functions with the =bitI= and =bitO= functions.  It's no HP-16C, but it will work in a pinch.
 
  - General Integer Stuff
-   - *=oddp=*: 1 if odd, 0 if even
-   - *=evenp=*: 1 if even, 0 if odd
+   - *=oddp(a)=*: 1 if odd, 0 if even
+   - *=evenp(a)=*: 1 if even, 0 if odd
  - Interpreting decimal integers as binary and vice versa
-   - *=bitI=*: dec interpreted as bin
-   - *=bitO=*: bin interpreted as dec
+   - *=bitI(a)=*: dec interpreted as bin
+   - *=bitO(a)=*: bin interpreted as dec
  - Bit Shifting
-   - *=bitSR=*: Shift right 1 bit
-   - *=bitSRn=*: Shift right n bits
-   - *=bitSL=*: Shift left 1 bit
-   - *=bitSLn=*: Shift left n bits
+   - *=bitSR(a)=*: Shift right 1 bit
+   - *=bitSRn(a,n)=*: Shift right n bits
+   - *=bitSL(a)=*: Shift left 1 bit
+   - *=bitSLn(a,n)=*: Shift left n bits
  - Bit Counting
-   - *=intLog2=*: int of base 2 log
-   - *=bitSIZE=*: bits required
-   - *=bitCNT=*: Number of set bits
-   - *=bitCLZ=*: Number of left zeros
+   - *=intLog2(a)=*: Int of base 2 log
+   - *=bitSIZE(a)=*: Bits required
+   - *=bitCNT(a)=*: Number of set bits
+   - *=bitCLZ(a)=*: Number of left zeros
  - Binary Bitwise logical operations on fixed sized integers
-   - *=bitANDn=*: N bit, bitwise and
-   - *=bitXORn=*: N bit, bitwise xor
-   - *=bitORn=*: N bit, bitwise or
+   - *=bitANDn(a,b,n)=*: N bit, bitwise and
+   - *=bitXORn(a,b,n)=*: N bit, bitwise xor
+   - *=bitORn(a,b,n)=*: N bit, bitwise or
+   - *=bitNOTn(a,b,n)=*: N bit, bitwise not
  - Binary Bitwise logical operations
-   - *=bitAND=*: bitwise and
-   - *=bitXOR=*: bitwise xor
-   - *=bitOR=*: bitwise or
- - Bitwise logical negation (this function only exists in a fixed sized form)
-   - *=bitNOTn=*: N bit, bitwise not
+   - *=bitAND(a,b)=*: Bitwise and
+   - *=bitXOR(a,b)=*: Bitwise xor
+   - *=bitOR(a,b)=*: Bitwise or
  - Lists of Bits (utility functions used behind the scenes)
-   - *=bitLIST=*: Reverse list of bits
-   - *=bitLISTn=*: Reverse list N bits
-   - *=bitULIST=*: Bit list to number
+   - *=bitLIST(a)=*: Reverse list of bits
+   - *=bitLISTn(a,n)=*: Reverse list N bits
+   - *=bitULIST(a)=*: Bit list to number
 
 ** Linear Algebra (=mjrLib/mjrLinearAlg=)
 :PROPERTIES:
 :CUSTOM_ID: mjrLinearAlg
 :END:
 
- - *=diagR=*: Diagonal for matrix (Matrix need not be square)
- - *=dprod=*: Product of diagonal (Matrix need not be square)
- - *=dsum=*: Diagonal Sum or trace  (Matrix need not be square)
- - *=slvLinEq=*: Solve matrix equation
- - *=slvLinODEq=*: Solve over determined matrix equation
- - *=augRREF=*: Augment to matrices together and RREF
- - *=invLeft=*: Left inverse
- - *=invRight=*: Right inverse
- - *=LU2P=*: Return the value of $P$ given $M$, $L$, & $U$
- - *=cPolyS=*: Characteristic polynomial via symbolic derivative
- - *=cPolyN=*: Characteristic polynomial via polynomial interpolation
+ - *=diagR(M)=*: Diagonal for matrix (Matrix need not be square)
+ - *=dprod(M)=*: Product of diagonal (Matrix need not be square)
+ - *=dsum(M)=*: Diagonal Sum or trace  (Matrix need not be square)
+ - *=slvLinEq(M,B)=*: Solve matrix equation
+ - *=slvLinODEq(M,B)=*: Solve over determined matrix equation
+ - *=augRREF(M,B)=*: Augment to matrices together and RREF
+ - *=invLeft(M)=*: Left inverse
+ - *=invRight(M)=*: Right inverse
+ - *=LU2P(M,L,U)=*: Return the value of $P$ for $LU$ decomposition.
+ - *=cPolyS(M)=*: Characteristic polynomial via symbolic computation
+ - *=cPolyN(M)=*: Characteristic polynomial via numeric interpolation
 
 ** Misc Math (=mjrLib/mjrMiscMath=)
 :PROPERTIES:
 :CUSTOM_ID: mjrMiscMath
 :END:
 
- - *=pt2ln=*: eq of line given 2 points (points provided as row vectors)
- - *=pt2ray=*: eq of ray given 2 points (points provided as row vectors)
+ - *=pt2ln(p1_row_vector,p2_row_vector)=*: Equation for line given 2 points
+ - *=pt2ray(start_point_row_vector,end_point_row_vector)=*: Equation for ray given 2 points
 
 ** Polynomial Stuff (=mjrLib/mjrPolynomial=)
 :PROPERTIES:
 :CUSTOM_ID: mjrPolynomial
 :END:
 
- - *=rt2ply=*: poly with given roots
- - *=rt2plym=*: like rt2ply but monic
- - *=slvPly=*: solve poly numerically
- - *=compMtrx=*: Companion matrix
+ - *=rt2ply(root_list)=*: Polynomial with given roots
+ - *=rt2plym(root_list)=*: Like *=rt2plym=* but the returned polynomial is monic
+ - *=slvPly(polynomial_coefficients_list)=*: Solve polynomial numerically
+ - *=compMtrx(polynomial_coefficients_list)=*: Companion matrix
 
 ** Repeated Measurement (=mjrLib/mjrRepMeas=)
 :PROPERTIES:
@@ -167,22 +166,22 @@ provide binary-like input and output from these functions with the =bitI= and =b
 I have a much more sophsticated solution for the HP-42S calculator: https://richmit.github.io/hp42/meas.html
 
  - Mean & Standard Deviation
-   - *=repMesNS=*: Meas Stats (μ & σ)
-   - *=repMesNI=*: Meas Interval (μ±σ)
+   - *=repMesNS(list_of_measurements)=*: Meas Stats (μ & σ)
+   - *=repMesNI(list_of_measurements)=*: Meas Interval (μ±σ)
  - Median & Interquartile Range
-   - *=repMesMS=*: Meas Stats 
-   - *=repMesMI=*: Meas Interval 
+   - *=repMesMS(list_of_measurements)=*: Meas Stats 
+   - *=repMesMI(list_of_measurements)=*: Meas Interval 
 
 ** Trig Functions (=mjrLib/mjrTrig=)
 :PROPERTIES:
 :CUSTOM_ID: mjrTrig
 :END:
 
- - *=csc=*: cosecant
- - *=sec=*: secant
- - *=cot=*: cotangent
- - *=havers=*:  haversine: $\frac{1-\cos(x)}{2}$
- - *=cis=*: Cosine-I-Sine: $\cos(x)+i\cdot\sin(x)$
+ - *=csc(angle)=*: cosecant
+ - *=sec(angle)=*: secant
+ - *=cot(angle)=*: cotangent
+ - *=havers(angle)=*:  haversine: $\frac{1-\cos(x)}{2}$
+ - *=cis(angle)=*: Cosine-I-Sine: $\cos(x)+i\cdot\sin(x)$
 
 ** Units Functions (=mjrLib/mjrUnits=)
 :PROPERTIES:
@@ -193,34 +192,34 @@ Note: These all start with =u_= so they show up clumped together in
 the keyboard function catalog.
 
  - Units (volume)
-   - *=u_gal_L=*: US Gallons to liters (A US gallon is about 0.83267 Imperial gallon)
-   - *=u_L_gal=*: liters to US Gallons
+   - *=u_gal_L(v)=*: US Gallons to liters (A US gallon is about 0.83267 Imperial gallon)
+   - *=u_L_gal(v)=*: liters to US Gallons
  - Units (force)
-   - *=u_lb_kgf=*: US Pounds to kg force
-   - *=u_kgf_lb=*: kg force to US pounds
-   - *=u_N_lb=*: Newtons to US pounds
-   - *=u_lb_N=*: US Pounds to newtons
+   - *=u_lb_kgf(v)=*: US Pounds to kg force
+   - *=u_kgf_lb(v)=*: kg force to US pounds
+   - *=u_N_lb(v)=*: Newtons to US pounds
+   - *=u_lb_N(v)=*: US Pounds to newtons
  - Units (temp)
-   - *=u_F_C=*: Degrees Fahrenheit to Celsius
-   - *=u_C_F=*: Degrees Celsius to Fahrenheit
-   - *=u_K_C=*: Degrees Kelvin to Celsius
-   - *=u_C_K=*: Degrees Celsius to Kelvin
+   - *=u_F_C(v)=*: Degrees Fahrenheit to Celsius
+   - *=u_C_F(v)=*: Degrees Celsius to Fahrenheit
+   - *=u_K_C(v)=*: Degrees Kelvin to Celsius
+   - *=u_C_K(v)=*: Degrees Celsius to Kelvin
  - Units (length)
-   - *=u_in_cm=*: International inches to centimeters (2.54 inches to the centimeter)
-   - *=u_cm_in=*: Centimeters to international inches
-   - *=u_mi_km=*: International miles to kilometers
-   - *=u_km_mi=*: kilometers to international miles
+   - *=u_in_cm(v)=*: International inches to centimeters (2.54 inches to the centimeter)
+   - *=u_cm_in(v)=*: Centimeters to international inches
+   - *=u_mi_km(v)=*: International miles to kilometers
+   - *=u_km_mi(v)=*: kilometers to international miles
 
 * Programs (=mjrProg/=)
 :PROPERTIES:
 :CUSTOM_ID: mjrProg
 :END:
 
- - *=jacobian=*: Compute the Jacobin matrix of an expression
- - *=mkDmat=*: Make a diagonal matrix from a list, matrix, or vector of elements
- - *=mkMat=*: Make a matrix from an index expression
- - *=newtonC=*: Solve complex equations with Newton's method.  This one pauses every 10 iterations to ask if you want it to keep searching.
- - *=newtonCC=*: Solve complex equations with Newton's method.  This one runs forever trying to find a root.
+ - *=jacobian(expression_in_x_y_and_z)=*: Compute the Jacobin matrix of an expression
+ - *=mkDmat(diag_as_list_matrix_or_vector)=*: Make a diagonal matrix
+ - *=mkMat(expression_in_x_and_y, number_of_rows, number_of_columns)=*: Make a matrix from an index expression
+ - *=newtonC(expression_in_x, initial_guess, epsilon)=*: Solve complex equations with Newton's method.  Query user every 10 iterations to continue.
+ - *=newtonCC(expression_in_x, initial_guess, epsilon)=*: Solve complex equations with Newton's method.  Runs forever trying to find a root.
 
 * Computational eActivities (=mjrComp/=)
 :PROPERTIES:
