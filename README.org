@@ -2,7 +2,7 @@
 
 This repo contains four directories:
 
- - *=mjrLib=*: Tons of random functions
+ - *mjrLib*: Tons of random functions
    - [[https://richmit.github.io/classpad2/#mjrCAS][CAS helpers]]
    - [[https://richmit.github.io/classpad2/#mjrConstants][Physical Constants]]
    - [[https://richmit.github.io/classpad2/#mjrIntegers][Bit Manipulation]]
@@ -11,10 +11,10 @@ This repo contains four directories:
    - [[https://richmit.github.io/classpad2/#mjrRepMeas][Repeated Measurement with Uncertainty]]
    - [[https://richmit.github.io/classpad2/#mjrTrig][Trig Functions]]
    - [[https://richmit.github.io/classpad2/#mjrUnits][Units Conversions]]
- - *=mjrProg=*: [[https://richmit.github.io/classpad2/#mjrProg][A few programs]]
- - *=mjrComp=*: [[https://richmit.github.io/classpad2/#mjrComp][Computational eActivities]]
- - *=mjrEqn=*: [[https://richmit.github.io/classpad2/#mjrEqn][Equations]]
- - *=docs=*: [[https://richmit.github.io/classpad2/][Documentation]] for everything above
+ - *mjrProg*: [[https://richmit.github.io/classpad2/#mjrProg][A few programs]]
+ - *mjrComp*: [[https://richmit.github.io/classpad2/#mjrComp][Computational eActivities]]
+ - *mjrEqn*: [[https://richmit.github.io/classpad2/#mjrEqn][Equations]]
+ - *docs*: [[https://richmit.github.io/classpad2/][Documentation]] for everything above
 
 Have fun!
 
