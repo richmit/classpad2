@@ -1,6 +1,6 @@
 * A Collection of eActivities & Programs for the Casio Classpad II
 
-This repo contains four directories:
+This repository contains five directories:
 
  - *mjrLib*: Tons of random functions
    - [[https://richmit.github.io/classpad2/#mjrCAS][CAS helpers]]
