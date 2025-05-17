@@ -236,6 +236,9 @@ These are eActivities I saved off because they contain a general computational p
  - *=DiodeModel=*: Compute SPICE model parameters from bench measurements
 
 * Formulas & Equations eActivities (=mjrEqn/=)
+:PROPERTIES:
+:CUSTOM_ID: mjrEqn
+:END:
 
 These eActivities provide a reference & computational environments for various formulas & equations.
 
