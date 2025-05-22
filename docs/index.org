@@ -286,7 +286,6 @@ to deal with the grumpy user interface. =:)=
  - *=toColVec(expression_list_or_vector)=*: Convert object to a column vector.  This is used by numerous programs to transform arguments into a canonical form.
  - *=subsCVec(expression, column_vector)=*: Use the components of a tuple (provided as column vector) into variables x, y, & z.  
 
-
 * Computational eActivities (=mjrComp/=)
 :PROPERTIES:
 :CUSTOM_ID: mjrComp
@@ -299,6 +298,7 @@ These are eActivities I saved off because they contain a general computational p
  - *=CubicInterp=*: Cubic Interpolation between two points
  - *=LinearInterp=*: Linear Interpolation between two points
  - *=SolveTri=*: Solve triangles. I add cases as I encounter them, and so far I have ASA, SSS, SAS, & AAS.
+ - *=SolveTriGeom=*: Just a couple geometry applications with triangles.
  - *=DiodeModel=*: Compute SPICE model parameters from bench measurements
 
 * Formulas & Equations eActivities (=mjrEqn/=)
