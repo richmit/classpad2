@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-17 Sat 15:44 -->
+<!-- 2025-05-22 Thu 12:57 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=1024, initial-scale=1" />
 <title>Classpad II Stuff</title>
@@ -263,12 +263,12 @@
 
 <tr>
 <td class="org-right"><b>Updated:</b></td>
-<td class="org-left"><i>2025-05-17 15:44:56</i></td>
+<td class="org-left"><i>2025-05-22 12:57:56</i></td>
 </tr>
 
 <tr>
 <td class="org-right"><b>Generated:</b></td>
-<td class="org-left"><i>2025-05-17 15:44:58</i></td>
+<td class="org-left"><i>2025-05-22 12:57:57</i></td>
 </tr>
 </tbody>
 </table>
@@ -281,7 +281,7 @@ Copyright &copy; 2025 Mitch Richling. All rights reserved.
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#org41467af">2. Library Functions</a>
+<li><a href="#org77cc9be">2. Library Functions</a>
 <ul>
 <li><a href="#mjrCAS">2.1. CAS Stuff (<code>mjrLib/mjrCAS</code>)</a></li>
 <li><a href="#mjrConstants">2.2. Physical Constants (<code>mjrLib/mjrConstants</code>)</a></li>
@@ -294,10 +294,15 @@ Copyright &copy; 2025 Mitch Richling. All rights reserved.
 <li><a href="#mjrUnits">2.9. Units Functions (<code>mjrLib/mjrUnits</code>)</a></li>
 </ul>
 </li>
-<li><a href="#mjrProg">3. Programs (<code>mjrProg/</code>)</a></li>
+<li><a href="#mjrProg">3. Programs (<code>mjrProg/</code>)</a>
+<ul>
+<li><a href="#mjrProgInt">3.1. Interactive</a></li>
+<li><a href="#mjrProgUtil">3.2. Utilities</a></li>
+</ul>
+</li>
 <li><a href="#mjrComp">4. Computational eActivities (<code>mjrComp/</code>)</a></li>
 <li><a href="#mjrEqn">5. Formulas &amp; Equations eActivities (<code>mjrEqn/</code>)</a></li>
-<li><a href="#orga6e4b1e">6. Shift Key Assignments</a></li>
+<li><a href="#org964efae">6. Shift Key Assignments</a></li>
 </ul>
 </div>
 </div>
@@ -313,8 +318,8 @@ All of the programs mentioned here may be found on github: <a href="https://gith
 </p>
 </div>
 </div>
-<div id="outline-container-org41467af" class="outline-2">
-<h2 id="org41467af"><span class="section-number-2">2.</span> Library Functions</h2>
+<div id="outline-container-org77cc9be" class="outline-2">
+<h2 id="org77cc9be"><span class="section-number-2">2.</span> Library Functions</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Functions intended to be placed in the <code>Library</code> folder.  The functions are contained inside eActivities so that one may pick and choose which functions they
@@ -524,13 +529,45 @@ the keyboard function catalog.
 <div id="outline-container-mjrProg" class="outline-2">
 <h2 id="mjrProg"><span class="section-number-2">3.</span> Programs (<code>mjrProg/</code>)</h2>
 <div class="outline-text-2" id="text-mjrProg">
+</div>
+<div id="outline-container-mjrProgInt" class="outline-3">
+<h3 id="mjrProgInt"><span class="section-number-3">3.1.</span> Interactive</h3>
+<div class="outline-text-3" id="text-mjrProgInt">
 <ul class="org-ul">
-<li><b><code>jacobian(expression_in_x_y_and_z)</code></b>: Compute the Jacobin matrix of an expression</li>
+<li><p>
+<b><code>jacobian(expression_in_x_y_and_z)</code></b>: Compute the Jacobin matrix of an expression <br />
+This program accepts an expression in up to three variables and a result in \( \mathbb{R}^n \).  When \(n=1\) this expression may be a simple expression,
+or it may be a one element list or vector.  When \(n>1\) this expression must be a list of expressions or a vector (row or column) of expressions. No
+matter the form of the input, the result will be in the standard matrix form.  For example a function \( \mathbb{R}^n\rightarrow\mathbb{R} \) will have a column
+vector Jacobin and a row vector gradiant. <br />
+</p>
+<div class="org-center">
+
+<div id="org4e93ec4" class="figure">
+<p><img src="pics/jacobian-input.png" alt="jacobian-input.png" />
+</p>
+</div>
+</div></li>
+</ul>
+
+<ul class="org-ul">
 <li><b><code>mkDmat(diag_as_list_matrix_or_vector)</code></b>: Make a diagonal matrix</li>
 <li><b><code>mkMat(expression_in_x_and_y, number_of_rows, number_of_columns)</code></b>: Make a matrix from an index expression</li>
-<li><b><code>newtonC(expression_in_x, initial_guess, epsilon)</code></b>: Solve complex equations with Newton's method.  Query user every 10 iterations to continue.</li>
-<li><b><code>newtonCC(expression_in_x, initial_guess, epsilon)</code></b>: Solve complex equations with Newton's method.  Runs forever trying to find a root.</li>
 </ul>
+</div>
+</div>
+<div id="outline-container-mjrProgUtil" class="outline-3">
+<h3 id="mjrProgUtil"><span class="section-number-3">3.2.</span> Utilities</h3>
+<div class="outline-text-3" id="text-mjrProgUtil">
+<p>
+These programs are designed to be used by other programs, and are far from user friendly.  Still, they can be used interactively so long as one is willing
+to deal with the grumpy user interface. <code>:)</code>
+</p>
+
+<ul class="org-ul">
+<li><b><code>toColVec(expression_list_or_vector)</code></b>: Convert object to a column vector.  This is used by numerous programs to transform arguments into a canonical form.</li>
+</ul>
+</div>
 </div>
 </div>
 <div id="outline-container-mjrComp" class="outline-2">
@@ -564,8 +601,8 @@ These eActivities provide a reference &amp; computational environments for vario
 </ul>
 </div>
 </div>
-<div id="outline-container-orga6e4b1e" class="outline-2">
-<h2 id="orga6e4b1e"><span class="section-number-2">6.</span> Shift Key Assignments</h2>
+<div id="outline-container-org964efae" class="outline-2">
+<h2 id="org964efae"><span class="section-number-2">6.</span> Shift Key Assignments</h2>
 <div class="outline-text-2" id="text-6">
 <table border="2" cellspacing="0" cellpadding="6" rules="all" frame="box" align="center" width="50%">
 

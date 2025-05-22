@@ -215,11 +215,56 @@ the keyboard function catalog.
 :CUSTOM_ID: mjrProg
 :END:
 
- - *=jacobian(expression_in_x_y_and_z)=*: Compute the Jacobin matrix of an expression
+** Interactive
+:PROPERTIES:
+:CUSTOM_ID: mjrProgInt
+:END:
+
+ - *=jacobian(expression_in_x_y_and_z)=*: Compute the Jacobin matrix of an expression \\
+   This program accepts an expression in up to three variables and a result in \( \mathbb{R}^n \).  When \(n=1\) this expression may be a simple expression,
+   or it may be a one element list or vector.  When \(n>1\) this expression must be a list of expressions or a vector (row or column) of expressions. No
+   matter the form of the input, the result will be in the standard matrix form.  For example a function \( \mathbb{R}^n\rightarrow\mathbb{R} \) will have a column
+   vector Jacobin and a row vector gradiant. \\
+   #+BEGIN_CENTER
+   file:pics/jacobian-input.png
+   #+END_CENTER
+ # - *=gradient(expression_in_x_y_and_z)=*: Compute the Gradiant vector of an expression (always a row vector).
+ #   #+BEGIN_CENTER
+ #   file:pics/jacobian-gradient.png
+ #   #+END_CENTER
+ # - *=hessian(expression_in_x_y_and_z)=*: Compute the Hessian matrix of a scalar valued, bivariate/trivariate expression.
+ #   #+BEGIN_CENTER
+ #   file:pics/gradient-hessian.png
+ #   #+END_CENTER
  - *=mkDmat(diag_as_list_matrix_or_vector)=*: Make a diagonal matrix
  - *=mkMat(expression_in_x_and_y, number_of_rows, number_of_columns)=*: Make a matrix from an index expression
- - *=newtonC(expression_in_x, initial_guess, epsilon)=*: Solve complex equations with Newton's method.  Query user every 10 iterations to continue.
- - *=newtonCC(expression_in_x, initial_guess, epsilon)=*: Solve complex equations with Newton's method.  Runs forever trying to find a root.
+ # - *=newtonC(expression_in_x, initial_guess, epsilon)=*: Search for a root of a univariate expression using Newton's method with complex arithmetic. \\
+ #   *NOTE:* This function will search for a root until it finds a zero or until the user cancels it. 
+ #   #+BEGIN_CENTER
+ #   file:pics/newtonC.png
+ #   #+END_CENTER
+ # - *=newtonCi(expression_in_x, initial_guess, epsilon)=*: Just like *=newtonC=* except pauses every 10 iterations and queries the user to continue.
+ # - *=newtonR2(expression_in_x, initial_guess, epsilon)=*: Search for a root system of two bivariate expressions using Newton's method with real arithmetic.  \\
+ #   This program accepts a two component, bivariate expression as it's first argument, and a point in \( \mathbb{R}^2 \) as it's second argument.  Each 
+ #   argument may be provided as a list of two elements, a two element row vector, or a two element column vector.  Both must be of the same form -- i.e. if
+ #   one is a list, then they both must be lists.  No mater the input form, the result will always be a two element column vector. \\
+ #   *NOTE:* This function will search for a root until it finds a zero or until the user cancels it. 
+ #   #+BEGIN_CENTER
+ #   file:pics/newtonR2.png
+ #   #+END_CENTER
+ # - *=newtonR3(expression_in_x, initial_guess, epsilon)=*: Just like *=newtonR2=*, but for systems of 3 equations.
+
+** Utilities
+:PROPERTIES:
+:CUSTOM_ID: mjrProgUtil
+:END:
+
+These programs are designed to be used by other programs, and are far from user friendly.  Still, they can be used interactively so long as one is willing
+to deal with the grumpy user interface. =:)=
+
+ - *=toColVec(expression_list_or_vector)=*: Convert object to a column vector.  This is used by numerous programs to transform arguments into a canonical form.
+ # - *=subsCVec(expression, column_vector)=*: Substitute the first element of column_vector into the expression as x, the second as y, and the third as z.the x into expression. 
+
 
 * Computational eActivities (=mjrComp/=)
 :PROPERTIES:
@@ -261,3 +306,27 @@ These eActivities provide a reference & computational environments for various f
 |       {} {{{HLTBC}}} )        | $e^\square$ {{{HLTBC}}} $4$ |   $\ln$ {{{HLTBC}}} $5$    | $\log_\square(\square)$ {{{HLTBC}}} $6$ |   {{{NBSP}}}  {{{HLTBC}}} $-$   |
 |     $\vert$ {{{HLTBC}}} ,     |   $\sin$ {{{HLTBC}}} $1$    |   $\cos$ {{{HLTBC}}} $2$   |         $\tan$ {{{HLTBC}}} $3$          |     $\circ$ {{{HLTBC}}} $+$     |
 | $\Rightarrow$ {{{HLTBC}}} (-) |    $\pi$ {{{HLTBC}}} $0$    |     $i$ {{{HLTBC}}} .      |       $\angle($ {{{HLTBC}}} =EXP=       |     =ans= {{{HLTBC}}} =EXE=     |
+
+* Image Processing :noexport:
+
+magick jacobian-gradient.bmp  -resize 50% jacobian-gradient.bmp
+
+#+begin_src bash  :results output verbatum :exports both
+magick pics/jacobian-input.bmp    -gravity South -chop 0x185 pics/jacobian-input.png
+magick pics/jacobian-gradient.bmp -gravity South -chop 0x90  pics/jacobian-gradient.png
+magick pics/gradient-hessian.bmp  -gravity South -chop 0x55  pics/gradient-hessian.png
+magick pics/newtonC.bmp           -gravity South -chop 0x152 pics/newtonC.png
+magick pics/newtonR2.bmp          -gravity South -chop 0x123 pics/newtonR2.png
+
+# for f in pics/*.bmp; do
+#   nf=$(echo pics/$(basename $f) | sed "s/.bmp/.png/")
+#   if [ $f -nt $nf ]; then
+#     echo convert $nf
+#     magick $f $nf
+#   else
+#     echo skip $nf
+#   fi
+# done
+#+end_src
+
+#+RESULTS:
