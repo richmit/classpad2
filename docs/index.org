@@ -318,16 +318,18 @@ These eActivities provide a reference & computational environments for various f
 
 #+MACRO: HLTBC    @@html:<hr />@@
 #+MACRO: NBSP    @@html:&nbsp;@@
+#+MACRO: MNBSP    @@html:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@
+#+MACRO: MNBSP2    @@html:<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@@
 
-#+ATTR_HTML: :frame box :rules all :align center :width 50%
-|          <c>           |          <c>          |           <c>           |          <c>           |              <c>               |                     <c>                      |
-| =approx= {{{HLTBC}}} = | =cut= {{{HLTBC}}} $x$ | =paste= {{{HLTBC}}} $y$ | =undo= {{{HLTBC}}} $z$ | $\sqrt{\square}$ {{{HLTBC}}} ^ | $\frac{\square}{\square}$ {{{HLTBC}}} $\div$ |
-#+ATTR_HTML: :frame box :rules all :align center :width 50%
-|              <c>              |             <c>             |            <c>             |                   <c>                   |               <c>               |
-|       [] {{{HLTBC}}} (        | {{{NBSP}}} {{{HLTBC}}} $7$  | {{{NBSP}}} {{{HLTBC}}} $8$ |       {{{NBSP}}} {{{HLTBC}}} $9$        | {{{NBSP}}} {{{HLTBC}}} $\times$ |
-|       {} {{{HLTBC}}} )        | $e^\square$ {{{HLTBC}}} $4$ |   $\ln$ {{{HLTBC}}} $5$    | $\log_\square(\square)$ {{{HLTBC}}} $6$ |   {{{NBSP}}}  {{{HLTBC}}} $-$   |
-|     $\vert$ {{{HLTBC}}} ,     |   $\sin$ {{{HLTBC}}} $1$    |   $\cos$ {{{HLTBC}}} $2$   |         $\tan$ {{{HLTBC}}} $3$          |     $\circ$ {{{HLTBC}}} $+$     |
-| $\Rightarrow$ {{{HLTBC}}} (-) |    $\pi$ {{{HLTBC}}} $0$    |     $i$ {{{HLTBC}}} .      |       $\angle($ {{{HLTBC}}} =EXP=       |     =ans= {{{HLTBC}}} =EXE=     |
+#+ATTR_HTML: :frame box :rules all :align center :width 75%
+|                <c>                 |                <c>                |                 <c>                 |                <c>                 |                    <c>                     |                           <c>                            |
+| =approx= {{{HLTBC}}} = {{{MNBSP}}} | =cut= {{{HLTBC}}} $x$ {{{MNBSP}}} | =paste= {{{HLTBC}}} $y$ {{{MNBSP}}} | =undo= {{{HLTBC}}} $z$ {{{MNBSP}}} | $\sqrt{\square}$ {{{HLTBC}}} ^ {{{MNBSP}}} | $\frac{\square}{\square}$ {{{HLTBC}}} $\div$ {{{MNBSP}}} |
+#+ATTR_HTML: :frame box :rules all :align center :width 75%
+|                    <c>                     |                   <c>                    |                   <c>                   |                         <c>                          |                     <c>                      |
+|       [] {{{HLTBC}}} ( {{{MNBSP2}}}        | {{{NBSP}}} {{{HLTBC}}} $7$ {{{MNBSP2}}}  | {{{NBSP}}} {{{HLTBC}}} $8$ {{{MNBSP2}}} |       {{{NBSP}}} {{{HLTBC}}} $9$ {{{MNBSP2}}}        | {{{NBSP}}} {{{HLTBC}}} $\times$ {{{MNBSP2}}} |
+|       {} {{{HLTBC}}} ) {{{MNBSP2}}}        | $e^\square$ {{{HLTBC}}} $4$ {{{MNBSP2}}} |   $\ln$ {{{HLTBC}}} $5$ {{{MNBSP2}}}    | $\log_\square(\square)$ {{{HLTBC}}} $6$ {{{MNBSP2}}} |   {{{NBSP}}}  {{{HLTBC}}} $-$ {{{MNBSP2}}}   |
+|     $\vert$ {{{HLTBC}}} , {{{MNBSP2}}}     |   $\sin$ {{{HLTBC}}} $1$ {{{MNBSP2}}}    |   $\cos$ {{{HLTBC}}} $2$ {{{MNBSP2}}}   |         $\tan$ {{{HLTBC}}} $3$ {{{MNBSP2}}}          |     $\circ$ {{{HLTBC}}} $+$ {{{MNBSP2}}}     |
+| $\Rightarrow$ {{{HLTBC}}} (-) {{{MNBSP2}}} |    $\pi$ {{{HLTBC}}} $0$ {{{MNBSP2}}}    |     $i$ {{{HLTBC}}} . {{{MNBSP2}}}      |       $\angle($ {{{HLTBC}}} =EXP= {{{MNBSP2}}}       |     =ans= {{{HLTBC}}} =EXE= {{{MNBSP2}}}     |
 
 * Image Processing :noexport:
 
