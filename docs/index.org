@@ -215,6 +215,9 @@ the keyboard function catalog.
 :CUSTOM_ID: mjrProg
 :END:
 
+One of the best ways to understand how to use this programs is to look at the "Unit Tests" in the (=mjrProgUnitTests/=) directory.  These are just eActivities
+that put each program through a few tests.  The images below each program are taken from these eActivities.
+
 ** Interactive
 :PROPERTIES:
 :CUSTOM_ID: mjrProgInt
