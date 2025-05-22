@@ -272,7 +272,6 @@ the keyboard function catalog.
    file:pics/subsList-ut-02.png 
    #+END_CENTER
 
-
 ** Utilities
 :PROPERTIES:
 :CUSTOM_ID: mjrProgUtil
@@ -282,7 +281,7 @@ These programs are designed to be used by other programs, and are far from user 
 to deal with the grumpy user interface. =:)=
 
  - *=toColVec(expression_list_or_vector)=*: Convert object to a column vector.  This is used by numerous programs to transform arguments into a canonical form.
- - *=subsCVec(expression, column_vector)=*: Substitute the first element of column_vector into the expression as x, the second as y, and the third as z.
+ - *=subsCVec(expression, column_vector)=*: Use the components of a tuple (provided as column vector) into variables x, y, & z.  
 
 
 * Computational eActivities (=mjrComp/=)
@@ -309,7 +308,6 @@ These eActivities provide a reference & computational environments for various f
  - *=Diode=*: Shockley Diode equation
  - *=CurrentDiv=*: Current Divider
  - *=VoltageDiv=*: Voltage Divider
-
 
 * Shift Key Assignments
 
