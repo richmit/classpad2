@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-22 Thu 12:57 -->
+<!-- 2025-05-22 Thu 13:18 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=1024, initial-scale=1" />
 <title>Classpad II Stuff</title>
@@ -263,12 +263,12 @@
 
 <tr>
 <td class="org-right"><b>Updated:</b></td>
-<td class="org-left"><i>2025-05-22 12:57:56</i></td>
+<td class="org-left"><i>2025-05-22 13:18:01</i></td>
 </tr>
 
 <tr>
 <td class="org-right"><b>Generated:</b></td>
-<td class="org-left"><i>2025-05-22 12:57:57</i></td>
+<td class="org-left"><i>2025-05-22 13:18:03</i></td>
 </tr>
 </tbody>
 </table>
@@ -281,7 +281,7 @@ Copyright &copy; 2025 Mitch Richling. All rights reserved.
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#org77cc9be">2. Library Functions</a>
+<li><a href="#org0ab733c">2. Library Functions</a>
 <ul>
 <li><a href="#mjrCAS">2.1. CAS Stuff (<code>mjrLib/mjrCAS</code>)</a></li>
 <li><a href="#mjrConstants">2.2. Physical Constants (<code>mjrLib/mjrConstants</code>)</a></li>
@@ -302,7 +302,7 @@ Copyright &copy; 2025 Mitch Richling. All rights reserved.
 </li>
 <li><a href="#mjrComp">4. Computational eActivities (<code>mjrComp/</code>)</a></li>
 <li><a href="#mjrEqn">5. Formulas &amp; Equations eActivities (<code>mjrEqn/</code>)</a></li>
-<li><a href="#org964efae">6. Shift Key Assignments</a></li>
+<li><a href="#org9f67cae">6. Shift Key Assignments</a></li>
 </ul>
 </div>
 </div>
@@ -318,8 +318,8 @@ All of the programs mentioned here may be found on github: <a href="https://gith
 </p>
 </div>
 </div>
-<div id="outline-container-org77cc9be" class="outline-2">
-<h2 id="org77cc9be"><span class="section-number-2">2.</span> Library Functions</h2>
+<div id="outline-container-org0ab733c" class="outline-2">
+<h2 id="org0ab733c"><span class="section-number-2">2.</span> Library Functions</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Functions intended to be placed in the <code>Library</code> folder.  The functions are contained inside eActivities so that one may pick and choose which functions they
@@ -543,7 +543,7 @@ vector Jacobin and a row vector gradiant. <br />
 </p>
 <div class="org-center">
 
-<div id="org4e93ec4" class="figure">
+<div id="orgb325482" class="figure">
 <p><img src="pics/jacobian-input.png" alt="jacobian-input.png" />
 </p>
 </div>
@@ -552,7 +552,33 @@ vector Jacobin and a row vector gradiant. <br />
 
 <ul class="org-ul">
 <li><b><code>mkDmat(diag_as_list_matrix_or_vector)</code></b>: Make a diagonal matrix</li>
-<li><b><code>mkMat(expression_in_x_and_y, number_of_rows, number_of_columns)</code></b>: Make a matrix from an index expression</li>
+<li><b><code>mkMat(expression_in_i_and_j, number_of_rows, number_of_columns)</code></b>: Make a matrix from an index expression</li>
+<li><p>
+<b><code>newtonC1(expression_in_x, initial_guess, epsilon)</code></b>: Search for a root of a univariate expression using Newton's method with complex arithmetic. <br />
+While this program supports complex expressions and guesses, it works just fine with real expressions and guesses too.  In fact, it will generally
+be faster using this function to solve a univariate function than <b><code>newtonRn</code></b>. <br />
+Every 10 iterations the program will ask the user if they wish to continue the search.
+</p>
+<div class="org-center">
+
+<div id="orgb01b3a1" class="figure">
+<p><img src="pics/newtonC1-ut-01.png" alt="newtonC1-ut-01.png" />
+</p>
+</div>
+</div></li>
+<li><p>
+<b><code>newtonRn(expression_in_x_y_z, initial_guess, epsilon)</code></b>: Search for a root system of 1-3 real valued expressions using Newton's method.  <br />
+This program accepts an expression with 1 to 3 components as it's first argument, and a point with the same number of components as it's second argument.
+Each argument may be provided as a list, row vector, or column vector.  No mater the input form, the result will always be a column vector. <br />
+Every 10 iterations the program will ask the user if they wish to continue the search.
+</p>
+<div class="org-center">
+
+<div id="org905f667" class="figure">
+<p><img src="pics/newtonRn-ut-01.png" alt="newtonRn-ut-01.png" />
+</p>
+</div>
+</div></li>
 </ul>
 </div>
 </div>
@@ -566,6 +592,7 @@ to deal with the grumpy user interface. <code>:)</code>
 
 <ul class="org-ul">
 <li><b><code>toColVec(expression_list_or_vector)</code></b>: Convert object to a column vector.  This is used by numerous programs to transform arguments into a canonical form.</li>
+<li><b><code>subsCVec(expression, column_vector)</code></b>: Substitute the first element of column_vector into the expression as x, the second as y, and the third as z.</li>
 </ul>
 </div>
 </div>
@@ -601,8 +628,8 @@ These eActivities provide a reference &amp; computational environments for vario
 </ul>
 </div>
 </div>
-<div id="outline-container-org964efae" class="outline-2">
-<h2 id="org964efae"><span class="section-number-2">6.</span> Shift Key Assignments</h2>
+<div id="outline-container-org9f67cae" class="outline-2">
+<h2 id="org9f67cae"><span class="section-number-2">6.</span> Shift Key Assignments</h2>
 <div class="outline-text-2" id="text-6">
 <table border="2" cellspacing="0" cellpadding="6" rules="all" frame="box" align="center" width="50%">
 
