@@ -311,6 +311,8 @@ These eActivities provide a reference & computational environments for various f
  - *=Diode=*: Shockley Diode equation
  - *=CurrentDiv=*: Current Divider
  - *=VoltageDiv=*: Voltage Divider
+ - *=HarmonicMotion=*: Harmonic Motion
+ - *=OhmsLaw=*: Ohm's Law
 
 * Shift Key Assignments
 
