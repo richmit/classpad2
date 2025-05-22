@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-22 Thu 13:44 -->
+<!-- 2025-05-22 Thu 14:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=1024, initial-scale=1" />
 <title>Classpad II Stuff</title>
@@ -263,12 +263,12 @@
 
 <tr>
 <td class="org-right"><b>Updated:</b></td>
-<td class="org-left"><i>2025-05-22 13:42:30</i></td>
+<td class="org-left"><i>2025-05-22 14:31:27</i></td>
 </tr>
 
 <tr>
 <td class="org-right"><b>Generated:</b></td>
-<td class="org-left"><i>2025-05-22 13:44:43</i></td>
+<td class="org-left"><i>2025-05-22 14:31:29</i></td>
 </tr>
 </tbody>
 </table>
@@ -281,7 +281,7 @@ Copyright &copy; 2025 Mitch Richling. All rights reserved.
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#org615185c">2. Library Functions</a>
+<li><a href="#org4ff0a8f">2. Library Functions</a>
 <ul>
 <li><a href="#mjrCAS">2.1. CAS Stuff (<code>mjrLib/mjrCAS</code>)</a></li>
 <li><a href="#mjrConstants">2.2. Physical Constants (<code>mjrLib/mjrConstants</code>)</a></li>
@@ -302,7 +302,7 @@ Copyright &copy; 2025 Mitch Richling. All rights reserved.
 </li>
 <li><a href="#mjrComp">4. Computational eActivities (<code>mjrComp/</code>)</a></li>
 <li><a href="#mjrEqn">5. Formulas &amp; Equations eActivities (<code>mjrEqn/</code>)</a></li>
-<li><a href="#org02fcbda">6. Shift Key Assignments</a></li>
+<li><a href="#org7b9251c">6. Shift Key Assignments</a></li>
 </ul>
 </div>
 </div>
@@ -318,8 +318,8 @@ All of the programs mentioned here may be found on github: <a href="https://gith
 </p>
 </div>
 </div>
-<div id="outline-container-org615185c" class="outline-2">
-<h2 id="org615185c"><span class="section-number-2">2.</span> Library Functions</h2>
+<div id="outline-container-org4ff0a8f" class="outline-2">
+<h2 id="org4ff0a8f"><span class="section-number-2">2.</span> Library Functions</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Functions intended to be placed in the <code>Library</code> folder.  The functions are contained inside eActivities so that one may pick and choose which functions they
@@ -553,7 +553,7 @@ vector Jacobin and a row vector gradiant. <br />
 </p>
 <div class="org-center">
 
-<div id="orge753bdc" class="figure">
+<div id="orga293b29" class="figure">
 <p><img src="pics/gradient-ut-01.png" alt="gradient-ut-01.png" />
 </p>
 </div>
@@ -562,14 +562,29 @@ vector Jacobin and a row vector gradiant. <br />
 <b><code>hessian(expression_in_x_y_and_z)</code></b>: Compute the Hessian matrix of a scalar valued, bivariate/trivariate expression.
 </p>
 <div class="org-center">
-
-<div id="orga4952ae" class="figure">
-<p><img src="pics/hessian-ut-01.png" alt="hessian-ut-01.png" />
+<p>
+<img src="pics/hessian-ut-01.png" alt="hessian-ut-01.png" /> <br />
+<img src="pics/hessian-ut-02.png" alt="hessian-ut-02.png" />
 </p>
-</div>
 </div></li>
-<li><b><code>mkDmat(diag_as_list_matrix_or_vector)</code></b>: Make a diagonal matrix</li>
-<li><b><code>mkMat(expression_in_i_and_j, number_of_rows, number_of_columns)</code></b>: Make a matrix from an index expression</li>
+<li><p>
+<b><code>mkDmat(diag_as_list_matrix_or_vector)</code></b>: Make a diagonal matrix
+</p>
+<div class="org-center">
+<p>
+<img src="pics/mkDmat-ut-01.png" alt="mkDmat-ut-01.png" /> <br />
+<img src="pics/mkDmat-ut-02.png" alt="mkDmat-ut-02.png" /> 
+</p>
+</div></li>
+<li><p>
+<b><code>mkMat(expression_in_i_and_j, number_of_rows, number_of_columns)</code></b>: Make a matrix from an index expression
+</p>
+<div class="org-center">
+<p>
+<img src="pics/mkMat-ut-01.png" alt="mkMat-ut-01.png" /> <br />
+<img src="pics/mkMat-ut-02.png" alt="mkMat-ut-02.png" /> 
+</p>
+</div></li>
 <li><p>
 <b><code>newtonC1(expression_in_x, initial_guess, epsilon)</code></b>: Search for a root of a univariate expression using Newton's method with complex arithmetic. <br />
 While this program supports complex expressions and guesses, it works just fine with real expressions and guesses too.  In fact, it will generally
@@ -577,11 +592,10 @@ be faster using this function to solve a univariate function than <b><code>newto
 Every 10 iterations the program will ask the user if they wish to continue the search.
 </p>
 <div class="org-center">
-
-<div id="org62ccffc" class="figure">
-<p><img src="pics/newtonC1-ut-01.png" alt="newtonC1-ut-01.png" />
+<p>
+<img src="pics/newtonC1-ut-01.png" alt="newtonC1-ut-01.png" /> <br />
+<img src="pics/newtonC1-ut-02.png" alt="newtonC1-ut-02.png" />
 </p>
-</div>
 </div></li>
 <li><p>
 <b><code>newtonRn(expression_in_x_y_z, initial_guess, epsilon)</code></b>: Search for a root system of 1-3 real valued expressions using Newton's method.  <br />
@@ -590,11 +604,20 @@ Each argument may be provided as a list, row vector, or column vector.  No mater
 Every 10 iterations the program will ask the user if they wish to continue the search.
 </p>
 <div class="org-center">
-
-<div id="org52db95b" class="figure">
-<p><img src="pics/newtonRn-ut-01.png" alt="newtonRn-ut-01.png" />
+<p>
+<img src="pics/newtonRn-ut-01.png" alt="newtonRn-ut-01.png" /> <br />
+<img src="pics/newtonRn-ut-02.png" alt="newtonRn-ut-02.png" />
 </p>
-</div>
+</div></li>
+<li><p>
+<b><code>subsList(expression, substitution_expression_or_list)</code></b>: Form a list by substituting each substitution into expression.  This is a very handy way to
+substitute all the solutions from <code>solve</code> into an equation.
+</p>
+<div class="org-center">
+<p>
+<img src="pics/subsList-ut-01.png" alt="subsList-ut-01.png" /> <br />
+<img src="pics/subsList-ut-02.png" alt="subsList-ut-02.png" /> 
+</p>
 </div></li>
 </ul>
 </div>
@@ -645,8 +668,8 @@ These eActivities provide a reference &amp; computational environments for vario
 </ul>
 </div>
 </div>
-<div id="outline-container-org02fcbda" class="outline-2">
-<h2 id="org02fcbda"><span class="section-number-2">6.</span> Shift Key Assignments</h2>
+<div id="outline-container-org7b9251c" class="outline-2">
+<h2 id="org7b9251c"><span class="section-number-2">6.</span> Shift Key Assignments</h2>
 <div class="outline-text-2" id="text-6">
 <table border="2" cellspacing="0" cellpadding="6" rules="all" frame="box" align="center" width="50%">
 
