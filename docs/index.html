@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-22 Thu 13:18 -->
+<!-- 2025-05-22 Thu 13:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=1024, initial-scale=1" />
 <title>Classpad II Stuff</title>
@@ -263,12 +263,12 @@
 
 <tr>
 <td class="org-right"><b>Updated:</b></td>
-<td class="org-left"><i>2025-05-22 13:18:01</i></td>
+<td class="org-left"><i>2025-05-22 13:42:30</i></td>
 </tr>
 
 <tr>
 <td class="org-right"><b>Generated:</b></td>
-<td class="org-left"><i>2025-05-22 13:18:03</i></td>
+<td class="org-left"><i>2025-05-22 13:44:43</i></td>
 </tr>
 </tbody>
 </table>
@@ -281,7 +281,7 @@ Copyright &copy; 2025 Mitch Richling. All rights reserved.
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#org0ab733c">2. Library Functions</a>
+<li><a href="#org615185c">2. Library Functions</a>
 <ul>
 <li><a href="#mjrCAS">2.1. CAS Stuff (<code>mjrLib/mjrCAS</code>)</a></li>
 <li><a href="#mjrConstants">2.2. Physical Constants (<code>mjrLib/mjrConstants</code>)</a></li>
@@ -302,7 +302,7 @@ Copyright &copy; 2025 Mitch Richling. All rights reserved.
 </li>
 <li><a href="#mjrComp">4. Computational eActivities (<code>mjrComp/</code>)</a></li>
 <li><a href="#mjrEqn">5. Formulas &amp; Equations eActivities (<code>mjrEqn/</code>)</a></li>
-<li><a href="#org9f67cae">6. Shift Key Assignments</a></li>
+<li><a href="#org02fcbda">6. Shift Key Assignments</a></li>
 </ul>
 </div>
 </div>
@@ -318,8 +318,8 @@ All of the programs mentioned here may be found on github: <a href="https://gith
 </p>
 </div>
 </div>
-<div id="outline-container-org0ab733c" class="outline-2">
-<h2 id="org0ab733c"><span class="section-number-2">2.</span> Library Functions</h2>
+<div id="outline-container-org615185c" class="outline-2">
+<h2 id="org615185c"><span class="section-number-2">2.</span> Library Functions</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Functions intended to be placed in the <code>Library</code> folder.  The functions are contained inside eActivities so that one may pick and choose which functions they
@@ -542,15 +542,32 @@ matter the form of the input, the result will be in the standard matrix form.  F
 vector Jacobin and a row vector gradiant. <br />
 </p>
 <div class="org-center">
+<p>
+<img src="pics/jacobian-ut-01.png" alt="jacobian-ut-01.png" /> <br />
+<img src="pics/jacobian-ut-02.png" alt="jacobian-ut-02.png" /> <br />
+<img src="pics/jacobian-ut-03.png" alt="jacobian-ut-03.png" />
+</p>
+</div></li>
+<li><p>
+<b><code>gradient(expression_in_x_y_and_z)</code></b>: Compute the Gradiant vector of an expression (always a row vector).
+</p>
+<div class="org-center">
 
-<div id="orgb325482" class="figure">
-<p><img src="pics/jacobian-input.png" alt="jacobian-input.png" />
+<div id="orge753bdc" class="figure">
+<p><img src="pics/gradient-ut-01.png" alt="gradient-ut-01.png" />
 </p>
 </div>
 </div></li>
-</ul>
+<li><p>
+<b><code>hessian(expression_in_x_y_and_z)</code></b>: Compute the Hessian matrix of a scalar valued, bivariate/trivariate expression.
+</p>
+<div class="org-center">
 
-<ul class="org-ul">
+<div id="orga4952ae" class="figure">
+<p><img src="pics/hessian-ut-01.png" alt="hessian-ut-01.png" />
+</p>
+</div>
+</div></li>
 <li><b><code>mkDmat(diag_as_list_matrix_or_vector)</code></b>: Make a diagonal matrix</li>
 <li><b><code>mkMat(expression_in_i_and_j, number_of_rows, number_of_columns)</code></b>: Make a matrix from an index expression</li>
 <li><p>
@@ -561,7 +578,7 @@ Every 10 iterations the program will ask the user if they wish to continue the s
 </p>
 <div class="org-center">
 
-<div id="orgb01b3a1" class="figure">
+<div id="org62ccffc" class="figure">
 <p><img src="pics/newtonC1-ut-01.png" alt="newtonC1-ut-01.png" />
 </p>
 </div>
@@ -574,7 +591,7 @@ Every 10 iterations the program will ask the user if they wish to continue the s
 </p>
 <div class="org-center">
 
-<div id="org905f667" class="figure">
+<div id="org52db95b" class="figure">
 <p><img src="pics/newtonRn-ut-01.png" alt="newtonRn-ut-01.png" />
 </p>
 </div>
@@ -628,8 +645,8 @@ These eActivities provide a reference &amp; computational environments for vario
 </ul>
 </div>
 </div>
-<div id="outline-container-org9f67cae" class="outline-2">
-<h2 id="org9f67cae"><span class="section-number-2">6.</span> Shift Key Assignments</h2>
+<div id="outline-container-org02fcbda" class="outline-2">
+<h2 id="org02fcbda"><span class="section-number-2">6.</span> Shift Key Assignments</h2>
 <div class="outline-text-2" id="text-6">
 <table border="2" cellspacing="0" cellpadding="6" rules="all" frame="box" align="center" width="50%">
 

@@ -226,16 +226,18 @@ the keyboard function catalog.
    matter the form of the input, the result will be in the standard matrix form.  For example a function \( \mathbb{R}^n\rightarrow\mathbb{R} \) will have a column
    vector Jacobin and a row vector gradiant. \\
    #+BEGIN_CENTER
-   file:pics/jacobian-input.png
+   file:pics/jacobian-ut-01.png \\
+   file:pics/jacobian-ut-02.png \\
+   file:pics/jacobian-ut-03.png
    #+END_CENTER
- # - *=gradient(expression_in_x_y_and_z)=*: Compute the Gradiant vector of an expression (always a row vector).
- #   #+BEGIN_CENTER
- #   file:pics/jacobian-gradient.png
- #   #+END_CENTER
- # - *=hessian(expression_in_x_y_and_z)=*: Compute the Hessian matrix of a scalar valued, bivariate/trivariate expression.
- #   #+BEGIN_CENTER
- #   file:pics/gradient-hessian.png
- #   #+END_CENTER
+ - *=gradient(expression_in_x_y_and_z)=*: Compute the Gradiant vector of an expression (always a row vector).
+   #+BEGIN_CENTER
+   file:pics/gradient-ut-01.png
+   #+END_CENTER
+ - *=hessian(expression_in_x_y_and_z)=*: Compute the Hessian matrix of a scalar valued, bivariate/trivariate expression.
+   #+BEGIN_CENTER
+   file:pics/hessian-ut-01.png
+   #+END_CENTER
  - *=mkDmat(diag_as_list_matrix_or_vector)=*: Make a diagonal matrix
  - *=mkMat(expression_in_i_and_j, number_of_rows, number_of_columns)=*: Make a matrix from an index expression
  - *=newtonC1(expression_in_x, initial_guess, epsilon)=*: Search for a root of a univariate expression using Newton's method with complex arithmetic. \\
@@ -311,13 +313,13 @@ These eActivities provide a reference & computational environments for various f
 magick jacobian-gradient.bmp  -resize 50% jacobian-gradient.bmp
 
 #+begin_src bash  :results output verbatum :exports both
-magick pics/jacobian-input.bmp    -gravity South -chop 0x185 pics/jacobian-input.png
-magick pics/jacobian-gradient.bmp -gravity South -chop 0x90  pics/jacobian-gradient.png
-magick pics/gradient-hessian.bmp  -gravity South -chop 0x55  pics/gradient-hessian.png
-magick pics/newtonC.bmp           -gravity South -chop 0x152 pics/newtonC.png
-magick pics/newtonR2.bmp          -gravity South -chop 0x123 pics/newtonR2.png
-magick pics/newtonC1-ut-01.bmp    -gravity South -chop 0x60 -gravity North -chop 0x100 pics/newtonC1-ut-01.png
-magick pics/newtonRn-ut-01.bmp    -gravity South -chop 0x30 -gravity North -chop 0x90  pics/newtonRn-ut-01.png
+magick pics/jacobian-ut-01.bmp    -gravity South -chop 0x130 -gravity North -chop 0x70  -gravity East -chop 28x0 pics/jacobian-ut-01.png
+magick pics/jacobian-ut-02.bmp    -gravity South -chop 0x40  -gravity North -chop 0x100 -gravity East -chop 28x0 pics/jacobian-ut-02.png
+magick pics/jacobian-ut-03.bmp    -gravity South -chop 0x60  -gravity North -chop 0x260 -gravity East -chop 28x0 pics/jacobian-ut-03.png
+magick pics/hessian-ut-01.bmp     -gravity South -chop 0x1   -gravity North -chop 0x90  -gravity East -chop 28x0 pics/hessian-ut-01.png
+magick pics/gradient-ut-01.bmp    -gravity South -chop 0x50  -gravity North -chop 0x150 -gravity East -chop 28x0 pics/gradient-ut-01.png
+magick pics/newtonC1-ut-01.bmp    -gravity South -chop 0x60  -gravity North -chop 0x100 -gravity East -chop 28x0 pics/newtonC1-ut-01.png
+magick pics/newtonRn-ut-01.bmp    -gravity South -chop 0x33  -gravity North -chop 0x90  -gravity East -chop 28x0 pics/newtonRn-ut-01.png
 # for f in pics/*.bmp; do
 #   nf=$(echo pics/$(basename $f) | sed "s/.bmp/.png/")
 #   if [ $f -nt $nf ]; then
