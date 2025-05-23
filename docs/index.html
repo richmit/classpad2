@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-22 Thu 15:27 -->
+<!-- 2025-05-23 Fri 12:03 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=1024, initial-scale=1" />
 <title>Classpad II Stuff</title>
@@ -263,12 +263,12 @@
 
 <tr>
 <td class="org-right"><b>Updated:</b></td>
-<td class="org-left"><i>2025-05-22 15:27:50</i></td>
+<td class="org-left"><i>2025-05-23 12:02:59</i></td>
 </tr>
 
 <tr>
 <td class="org-right"><b>Generated:</b></td>
-<td class="org-left"><i>2025-05-22 15:27:51</i></td>
+<td class="org-left"><i>2025-05-23 12:03:00</i></td>
 </tr>
 </tbody>
 </table>
@@ -281,7 +281,7 @@ Copyright &copy; 2025 Mitch Richling. All rights reserved.
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#orgadc3971">2. Library Functions</a>
+<li><a href="#org5be7327">2. Library Functions</a>
 <ul>
 <li><a href="#mjrCAS">2.1. CAS Stuff (<code>mjrLib/mjrCAS</code>)</a></li>
 <li><a href="#mjrConstants">2.2. Physical Constants (<code>mjrLib/mjrConstants</code>)</a></li>
@@ -302,7 +302,7 @@ Copyright &copy; 2025 Mitch Richling. All rights reserved.
 </li>
 <li><a href="#mjrComp">4. Computational eActivities (<code>mjrComp/</code>)</a></li>
 <li><a href="#mjrEqn">5. Formulas &amp; Equations eActivities (<code>mjrEqn/</code>)</a></li>
-<li><a href="#org586db27">6. Shift Key Assignments</a></li>
+<li><a href="#org5f1096b">6. Shift Key Assignments</a></li>
 </ul>
 </div>
 </div>
@@ -316,10 +316,18 @@ Just some stuff I've written for the Casio Classpad II calculator.
 <p>
 All of the programs mentioned here may be found on github: <a href="https://github.com/richmit/classpad2">https://github.com/richmit/classpad2</a>
 </p>
+
+<blockquote>
+<p>
+<b>WARNING:</b> Many of these items depend upon each other.  For example the programs <code>gradient</code> &amp; <code>hessian</code> both call the <code>jacobian</code> program and the <code>jacobian</code>
+program calls the <code>toColVec</code> program. As another example, the eActivity <code>FunCrt2D</code> makes use of the programs <code>gradient</code>, <code>hessian</code>, and <code>subsList</code>.  If you
+run into unresolved names, then double check that the programs are in the "library" folder, and the functions in the eActivities have been evaluated.
+</p>
+</blockquote>
 </div>
 </div>
-<div id="outline-container-orgadc3971" class="outline-2">
-<h2 id="orgadc3971"><span class="section-number-2">2.</span> Library Functions</h2>
+<div id="outline-container-org5be7327" class="outline-2">
+<h2 id="org5be7327"><span class="section-number-2">2.</span> Library Functions</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Functions intended to be placed in the <code>Library</code> folder.  The functions are contained inside eActivities so that one may pick and choose which functions they
@@ -423,14 +431,16 @@ provide binary-like input and output from these functions with the <code>bitI</c
 <li><b><code>diagR(M)</code></b>: Diagonal for matrix (Matrix need not be square)</li>
 <li><b><code>dprod(M)</code></b>: Product of diagonal (Matrix need not be square)</li>
 <li><b><code>dsum(M)</code></b>: Diagonal Sum or trace  (Matrix need not be square)</li>
-<li><b><code>slvLinEq(M,B)</code></b>: Solve matrix equation</li>
-<li><b><code>slvLinODEq(M,B)</code></b>: Solve over determined matrix equation</li>
-<li><b><code>augRREF(M,B)</code></b>: Augment to matrices together and RREF</li>
+<li><b><code>slvLin(M,B)</code></b>: Solve matrix equation</li>
+<li><b><code>slvLinOE(M,B)</code></b>: Find the least squares solution for an over-determined matrix equation</li>
+<li><b><code>augRREF(M,B)</code></b>: Augment two matrices together and RREF</li>
 <li><b><code>invLeft(M)</code></b>: Left inverse</li>
 <li><b><code>invRight(M)</code></b>: Right inverse</li>
 <li><b><code>LU2P(M,L,U)</code></b>: Return the value of \(P\) for \(LU\) decomposition.</li>
 <li><b><code>cPolyS(M)</code></b>: Characteristic polynomial via symbolic computation</li>
 <li><b><code>cPolyN(M)</code></b>: Characteristic polynomial via numeric interpolation</li>
+<li><b><code>matPosP(M)</code></b>: Matrix predicate returning TRUE if M is positive definite</li>
+<li><b><code>matInvP(M)</code></b>: Matrix predicate returning TRUE if M is inevitable</li>
 </ul>
 </div>
 </div>
@@ -530,8 +540,8 @@ the keyboard function catalog.
 <h2 id="mjrProg"><span class="section-number-2">3.</span> Programs (<code>mjrProg/</code>)</h2>
 <div class="outline-text-2" id="text-mjrProg">
 <p>
-One of the best ways to understand how to use this programs is to look at the "Unit Tests" in the (<code>mjrProgUnitTests/</code>) directory.  These are just eActivities
-that put each program through a few tests.  The images below each program are taken from these eActivities.
+One of the best ways to understand how to use these programs is to look at the "Unit Tests" in the (<code>mjrProgUnitTests/</code>) directory.  These are just
+eActivities that put each program through a few tests.  The images below each program are taken from these eActivities.
 </p>
 </div>
 <div id="outline-container-mjrProgInt" class="outline-3">
@@ -540,10 +550,11 @@ that put each program through a few tests.  The images below each program are ta
 <ul class="org-ul">
 <li><p>
 <b><code>jacobian(expression_in_x_y_and_z)</code></b>: Compute the Jacobin matrix of an expression <br />
-This program accepts an expression in up to three variables and a result in \( \mathbb{R}^n \).  When \(n=1\) this expression may be a simple expression,
-or it may be a one element list or vector.  When \(n>1\) this expression must be a list of expressions or a vector (row or column) of expressions. No
-matter the form of the input, the result will be in the standard matrix form.  For example a function \( \mathbb{R}^n\rightarrow\mathbb{R} \) will have a column
-vector Jacobin and a row vector gradiant. <br />
+This program takes an expression in up to three variables.  The second argument is the number of variables in the expression.  The expression is
+interpreted as a function with values in \( \mathbb{R}^n \).  When \(n=1\) the expression in normally a simple algebraic expression, but it may also be a
+one element list or vector.  When \(n>1\) the expression must be a list of expressions or a vector (row or column) of expressions. No matter the form of
+the input, the result will be in the standard matrix form.  For example a function \( \mathbb{R}^n\rightarrow\mathbb{R} \) will have a column vector
+jacobin and a row vector gradient. <br />
 </p>
 <div class="org-center">
 <p>
@@ -553,11 +564,12 @@ vector Jacobin and a row vector gradiant. <br />
 </p>
 </div></li>
 <li><p>
-<b><code>gradient(expression_in_x_y_and_z)</code></b>: Compute the Gradiant vector of an expression (always a row vector).
+<b><code>gradient(expression_in_x_y_and_z)</code></b>: Compute the gradient vector of an expression (always a row vector).  This is much like <code>jacobian</code>; however, the
+functions are always scalar valued &#x2013; i.e. the \(n\) in the <code>jacobian</code> documentation is equal to one.
 </p>
 <div class="org-center">
 
-<div id="org47968b1" class="figure">
+<div id="org528a86e" class="figure">
 <p><img src="pics/gradient-ut-01.png" alt="gradient-ut-01.png" />
 </p>
 </div>
@@ -590,9 +602,7 @@ vector Jacobin and a row vector gradiant. <br />
 </p>
 </div></li>
 <li><p>
-<b><code>newtonC1(expression_in_x, initial_guess, epsilon)</code></b>: Search for a root of a univariate expression using Newton's method with complex arithmetic. <br />
-While this program supports complex expressions and guesses, it works just fine with real expressions and guesses too.  In fact, it will generally
-be faster using this function to solve a univariate function than <b><code>newtonRn</code></b>. <br />
+<b><code>newtonC1(expression_in_x, initial_guess, epsilon)</code></b>: Search for a root of a univariate expression using Newton's method with complex arithmetic.    
 Every 10 iterations the program will ask the user if they wish to continue the search.
 </p>
 <div class="org-center">
@@ -602,10 +612,10 @@ Every 10 iterations the program will ask the user if they wish to continue the s
 </p>
 </div></li>
 <li><p>
-<b><code>newtonRn(expression_in_x_y_z, initial_guess, epsilon)</code></b>: Search for a root system of 1-3 real valued expressions using Newton's method.  <br />
-This program accepts an expression with 1 to 3 components as it's first argument, and a point with the same number of components as it's second argument.
-Each argument may be provided as a list, row vector, or column vector.  No mater the input form, the result will always be a column vector. <br />
-Every 10 iterations the program will ask the user if they wish to continue the search.
+<b><code>newtonRn(expression_in_x_y_z, initial_guess, epsilon)</code></b>: Search for a root system of 1-3 real valued expressions using Newton's method.  This program
+accepts an expression with 1 to 3 components as it's first argument (just like the <code>jacobian</code> program), and a point with the same number of components as
+it's second argument.  Each argument may be provided as a list, row vector, or column vector.  No mater the input form, the result will always be a column
+vector.  Every 10 iterations the program will ask the user if they wish to continue the search.
 </p>
 <div class="org-center">
 <p>
@@ -636,7 +646,7 @@ to deal with the grumpy user interface. <code>:)</code>
 
 <ul class="org-ul">
 <li><b><code>toColVec(expression_list_or_vector)</code></b>: Convert object to a column vector.  This is used by numerous programs to transform arguments into a canonical form.</li>
-<li><b><code>subsCVec(expression, column_vector)</code></b>: Use the components of a tuple (provided as column vector) into variables x, y, &amp; z.</li>
+<li><b><code>subsCVec(expression, column_vector)</code></b>: Use the components of a tuple (provided as column vector) to substitute into variables x, y, &amp; z.</li>
 </ul>
 </div>
 </div>
@@ -675,8 +685,8 @@ These eActivities provide a reference &amp; computational environments for vario
 </ul>
 </div>
 </div>
-<div id="outline-container-org586db27" class="outline-2">
-<h2 id="org586db27"><span class="section-number-2">6.</span> Shift Key Assignments</h2>
+<div id="outline-container-org5f1096b" class="outline-2">
+<h2 id="org5f1096b"><span class="section-number-2">6.</span> Shift Key Assignments</h2>
 <div class="outline-text-2" id="text-6">
 <table border="2" cellspacing="0" cellpadding="6" rules="all" frame="box" align="center" width="75%">
 

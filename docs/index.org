@@ -53,6 +53,12 @@ Just some stuff I've written for the Casio Classpad II calculator.
 
 All of the programs mentioned here may be found on github: https://github.com/richmit/classpad2
 
+#+BEGIN_QUOTE
+*WARNING:* Many of these items depend upon each other.  For example the programs =gradient= & =hessian= both call the =jacobian= program and the =jacobian=
+program calls the =toColVec= program. As another example, the eActivity =FunCrt2D= makes use of the programs =gradient=, =hessian=, and =subsList=.  If you
+run into unresolved names, then double check that the programs are in the "library" folder, and the functions in the eActivities have been evaluated.
+#+END_QUOTE
+
 * Library Functions
 
 Functions intended to be placed in the =Library= folder.  The functions are contained inside eActivities so that one may pick and choose which functions they
@@ -131,14 +137,16 @@ provide binary-like input and output from these functions with the =bitI= and =b
  - *=diagR(M)=*: Diagonal for matrix (Matrix need not be square)
  - *=dprod(M)=*: Product of diagonal (Matrix need not be square)
  - *=dsum(M)=*: Diagonal Sum or trace  (Matrix need not be square)
- - *=slvLinEq(M,B)=*: Solve matrix equation
- - *=slvLinODEq(M,B)=*: Solve over determined matrix equation
- - *=augRREF(M,B)=*: Augment to matrices together and RREF
+ - *=slvLin(M,B)=*: Solve matrix equation
+ - *=slvLinOE(M,B)=*: Find the least squares solution for an over-determined matrix equation
+ - *=augRREF(M,B)=*: Augment two matrices together and RREF
  - *=invLeft(M)=*: Left inverse
  - *=invRight(M)=*: Right inverse
  - *=LU2P(M,L,U)=*: Return the value of $P$ for $LU$ decomposition.
  - *=cPolyS(M)=*: Characteristic polynomial via symbolic computation
  - *=cPolyN(M)=*: Characteristic polynomial via numeric interpolation
+ - *=matPosP(M)=*: Matrix predicate returning TRUE if M is positive definite
+ - *=matInvP(M)=*: Matrix predicate returning TRUE if M is inevitable
 
 ** Misc Math (=mjrLib/mjrMiscMath=)
 :PROPERTIES:
@@ -215,8 +223,8 @@ the keyboard function catalog.
 :CUSTOM_ID: mjrProg
 :END:
 
-One of the best ways to understand how to use this programs is to look at the "Unit Tests" in the (=mjrProgUnitTests/=) directory.  These are just eActivities
-that put each program through a few tests.  The images below each program are taken from these eActivities.
+One of the best ways to understand how to use these programs is to look at the "Unit Tests" in the (=mjrProgUnitTests/=) directory.  These are just
+eActivities that put each program through a few tests.  The images below each program are taken from these eActivities.
 
 ** Interactive
 :PROPERTIES:
@@ -224,16 +232,18 @@ that put each program through a few tests.  The images below each program are ta
 :END:
 
  - *=jacobian(expression_in_x_y_and_z)=*: Compute the Jacobin matrix of an expression \\
-   This program accepts an expression in up to three variables and a result in \( \mathbb{R}^n \).  When \(n=1\) this expression may be a simple expression,
-   or it may be a one element list or vector.  When \(n>1\) this expression must be a list of expressions or a vector (row or column) of expressions. No
-   matter the form of the input, the result will be in the standard matrix form.  For example a function \( \mathbb{R}^n\rightarrow\mathbb{R} \) will have a column
-   vector Jacobin and a row vector gradiant. \\
+   This program takes an expression in up to three variables.  The second argument is the number of variables in the expression.  The expression is
+   interpreted as a function with values in \( \mathbb{R}^n \).  When \(n=1\) the expression in normally a simple algebraic expression, but it may also be a
+   one element list or vector.  When \(n>1\) the expression must be a list of expressions or a vector (row or column) of expressions. No matter the form of
+   the input, the result will be in the standard matrix form.  For example a function \( \mathbb{R}^n\rightarrow\mathbb{R} \) will have a column vector
+   jacobin and a row vector gradient. \\
    #+BEGIN_CENTER
    file:pics/jacobian-ut-01.png \\
    file:pics/jacobian-ut-02.png \\
    file:pics/jacobian-ut-03.png
    #+END_CENTER
- - *=gradient(expression_in_x_y_and_z)=*: Compute the Gradiant vector of an expression (always a row vector).
+ - *=gradient(expression_in_x_y_and_z)=*: Compute the gradient vector of an expression (always a row vector).  This is much like =jacobian=; however, the
+   functions are always scalar valued -- i.e. the \(n\) in the =jacobian= documentation is equal to one.
    #+BEGIN_CENTER
    file:pics/gradient-ut-01.png
    #+END_CENTER
@@ -252,18 +262,16 @@ that put each program through a few tests.  The images below each program are ta
    file:pics/mkMat-ut-01.png \\
    file:pics/mkMat-ut-02.png 
    #+END_CENTER
- - *=newtonC1(expression_in_x, initial_guess, epsilon)=*: Search for a root of a univariate expression using Newton's method with complex arithmetic. \\
-   While this program supports complex expressions and guesses, it works just fine with real expressions and guesses too.  In fact, it will generally
-   be faster using this function to solve a univariate function than *=newtonRn=*. \\
+ - *=newtonC1(expression_in_x, initial_guess, epsilon)=*: Search for a root of a univariate expression using Newton's method with complex arithmetic.    
    Every 10 iterations the program will ask the user if they wish to continue the search.
    #+BEGIN_CENTER
    file:pics/newtonC1-ut-01.png \\
    file:pics/newtonC1-ut-02.png
    #+END_CENTER
- - *=newtonRn(expression_in_x_y_z, initial_guess, epsilon)=*: Search for a root system of 1-3 real valued expressions using Newton's method.  \\
-   This program accepts an expression with 1 to 3 components as it's first argument, and a point with the same number of components as it's second argument.
-   Each argument may be provided as a list, row vector, or column vector.  No mater the input form, the result will always be a column vector. \\
-   Every 10 iterations the program will ask the user if they wish to continue the search.
+ - *=newtonRn(expression_in_x_y_z, initial_guess, epsilon)=*: Search for a root system of 1-3 real valued expressions using Newton's method.  This program
+   accepts an expression with 1 to 3 components as it's first argument (just like the =jacobian= program), and a point with the same number of components as
+   it's second argument.  Each argument may be provided as a list, row vector, or column vector.  No mater the input form, the result will always be a column
+   vector.  Every 10 iterations the program will ask the user if they wish to continue the search.
    #+BEGIN_CENTER
    file:pics/newtonRn-ut-01.png \\
    file:pics/newtonRn-ut-02.png
@@ -284,7 +292,7 @@ These programs are designed to be used by other programs, and are far from user 
 to deal with the grumpy user interface. =:)=
 
  - *=toColVec(expression_list_or_vector)=*: Convert object to a column vector.  This is used by numerous programs to transform arguments into a canonical form.
- - *=subsCVec(expression, column_vector)=*: Use the components of a tuple (provided as column vector) into variables x, y, & z.  
+ - *=subsCVec(expression, column_vector)=*: Use the components of a tuple (provided as column vector) to substitute into variables x, y, & z.  
 
 * Computational eActivities (=mjrComp/=)
 :PROPERTIES:
