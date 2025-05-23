@@ -155,6 +155,7 @@ provide binary-like input and output from these functions with the =bitI= and =b
 
  - *=pt2ln(p1_row_vector,p2_row_vector)=*: Equation for line given 2 points
  - *=pt2ray(start_point_row_vector,end_point_row_vector)=*: Equation for ray given 2 points
+ - *=sign(v)=*: Like =signum()=, but returns zero when v is zero.
 
 ** Polynomial Stuff (=mjrLib/mjrPolynomial=)
 :PROPERTIES:
