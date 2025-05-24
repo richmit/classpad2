@@ -145,7 +145,8 @@ provide binary-like input and output from these functions with the =bitI= and =b
  - *=LU2P(M,L,U)=*: Return the value of $P$ for $LU$ decomposition.
  - *=cPolyS(M)=*: Characteristic polynomial via symbolic computation
  - *=cPolyN(M)=*: Characteristic polynomial via numeric interpolation
- - *=matPosP(M)=*: Matrix predicate returning TRUE if M is positive definite
+ - *=matPosP(M)=*: Matrix predicate returning TRUE if all eigenvalues are positive
+ - *=matNegP(M)=*: Matrix predicate returning TRUE if all eigenvalues are negative
  - *=matInvP(M)=*: Matrix predicate returning TRUE if M is inevitable
 
 ** Misc Math (=mjrLib/mjrMiscMath=)
@@ -283,6 +284,12 @@ eActivities that put each program through a few tests.  The images below each pr
    file:pics/subsList-ut-01.png \\
    file:pics/subsList-ut-02.png 
    #+END_CENTER
+ # - *=hessTest(hessian_or_list_of_hessians)=*: Preform the second derivative test on one or more Hessians.
+ #   #+BEGIN_CENTER
+ #   file:pics/hessTest-ut-01.png \\
+ #   file:pics/hessTest-ut-02.png \\
+ #   file:pics/hessTest-ut-02.png 
+ #   #+END_CENTER
 
 ** Utilities
 :PROPERTIES:
@@ -304,6 +311,7 @@ These are eActivities I saved off because they contain a general computational p
 
  - *=FunCrt1D=*: Find the critical points of an expression in 1 variable
  - *=FunCrt2D=*: Find the critical points of an expression in 2 variables
+# - *=FunCrt3D=*: Find the critical points of an expression in 3 variables (or any number really)
  - *=CubicInterp=*: Cubic Interpolation between two points
  - *=LinearInterp=*: Linear Interpolation between two points
  - *=SolveTri=*: Solve triangles. I add cases as I encounter them, and so far I have ASA, SSS, SAS, & AAS.
@@ -368,16 +376,6 @@ magick pics/newtonRn-ut-02.bmp    -gravity South -chop 0x55   -gravity North -ch
 
 magick pics/subsList-ut-01.bmp    -gravity South -chop 0x100  -gravity North -chop 0x70 -gravity East -chop 28x0 pics/subsList-ut-01.png
 magick pics/subsList-ut-02.bmp    -gravity South -chop 0x55  -gravity North -chop 0x205 -gravity East -chop 28x0 pics/subsList-ut-02.png
-
-# for f in pics/*.bmp; do
-#   nf=$(echo pics/$(basename $f) | sed "s/.bmp/.png/")
-#   if [ $f -nt $nf ]; then
-#     echo convert $nf
-#     magick $f $nf
-#   else
-#     echo skip $nf
-#   fi
-# done
 #+end_src
 
 #+RESULTS:
