@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-05-24 Sat 13:38 -->
+<!-- 2025-05-25 Sun 12:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=1024, initial-scale=1" />
 <title>Classpad II Stuff</title>
@@ -263,12 +263,12 @@
 
 <tr>
 <td class="org-right"><b>Updated:</b></td>
-<td class="org-left"><i>2025-05-24 13:38:10</i></td>
+<td class="org-left"><i>2025-05-25 12:53:51</i></td>
 </tr>
 
 <tr>
 <td class="org-right"><b>Generated:</b></td>
-<td class="org-left"><i>2025-05-24 13:38:11</i></td>
+<td class="org-left"><i>2025-05-25 12:53:53</i></td>
 </tr>
 </tbody>
 </table>
@@ -281,7 +281,7 @@ Copyright &copy; 2025 Mitch Richling. All rights reserved.
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#org7a74b59">2. Library Functions</a>
+<li><a href="#org94220aa">2. Library Functions</a>
 <ul>
 <li><a href="#mjrCAS">2.1. CAS Stuff (<code>mjrLib/mjrCAS</code>)</a></li>
 <li><a href="#mjrConstants">2.2. Physical Constants (<code>mjrLib/mjrConstants</code>)</a></li>
@@ -302,7 +302,7 @@ Copyright &copy; 2025 Mitch Richling. All rights reserved.
 </li>
 <li><a href="#mjrComp">4. Computational eActivities (<code>mjrComp/</code>)</a></li>
 <li><a href="#mjrEqn">5. Formulas &amp; Equations eActivities (<code>mjrEqn/</code>)</a></li>
-<li><a href="#org7249a12">6. Shift Key Assignments</a></li>
+<li><a href="#org1222e56">6. Shift Key Assignments</a></li>
 </ul>
 </div>
 </div>
@@ -326,8 +326,8 @@ run into unresolved names, then double check that the programs are in the "libra
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org7a74b59" class="outline-2">
-<h2 id="org7a74b59"><span class="section-number-2">2.</span> Library Functions</h2>
+<div id="outline-container-org94220aa" class="outline-2">
+<h2 id="org94220aa"><span class="section-number-2">2.</span> Library Functions</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Functions intended to be placed in the <code>Library</code> folder.  The functions are contained inside eActivities so that one may pick and choose which functions they
@@ -571,7 +571,7 @@ functions are always scalar valued &#x2013; i.e. the \(n\) in the <code>jacobian
 </p>
 <div class="org-center">
 
-<div id="orgb6d6678" class="figure">
+<div id="org222ae48" class="figure">
 <p><img src="pics/gradient-ut-01.png" alt="gradient-ut-01.png" />
 </p>
 </div>
@@ -635,6 +635,17 @@ substitute all the solutions from <code>solve</code> into an equation.
 <img src="pics/subsList-ut-02.png" alt="subsList-ut-02.png" /> 
 </p>
 </div></li>
+<li><p>
+<b><code>hessTest(hessian_or_list_of_hessians)</code></b>: Preform the second derivative test on one or more Hessians.  Univariate hessians may be provided as a number, or
+a matrix with a single element.  Multivariate hessians must be provided as a matrix.  When a list of Hessians is given, they do not need to be of the same
+size.
+</p>
+<div class="org-center">
+<p>
+<img src="pics/hessTest-ut-01.png" alt="hessTest-ut-01.png" /> <br />
+<img src="pics/hessTest-ut-02.png" alt="hessTest-ut-02.png" /> 
+</p>
+</div></li>
 </ul>
 </div>
 </div>
@@ -663,9 +674,7 @@ These are eActivities I saved off because they contain a general computational p
 <ul class="org-ul">
 <li><b><code>FunCrt1D</code></b>: Find the critical points of an expression in 1 variable</li>
 <li><b><code>FunCrt2D</code></b>: Find the critical points of an expression in 2 variables</li>
-</ul>
-
-<ul class="org-ul">
+<li><b><code>FunCrt3D</code></b>: Find the critical points of an expression in 3 variables (or any number really)</li>
 <li><b><code>CubicInterp</code></b>: Cubic Interpolation between two points</li>
 <li><b><code>LinearInterp</code></b>: Linear Interpolation between two points</li>
 <li><b><code>SolveTri</code></b>: Solve triangles. I add cases as I encounter them, and so far I have ASA, SSS, SAS, &amp; AAS.</li>
@@ -690,8 +699,8 @@ These eActivities provide a reference &amp; computational environments for vario
 </ul>
 </div>
 </div>
-<div id="outline-container-org7249a12" class="outline-2">
-<h2 id="org7249a12"><span class="section-number-2">6.</span> Shift Key Assignments</h2>
+<div id="outline-container-org1222e56" class="outline-2">
+<h2 id="org1222e56"><span class="section-number-2">6.</span> Shift Key Assignments</h2>
 <div class="outline-text-2" id="text-6">
 <table border="2" cellspacing="0" cellpadding="6" rules="all" frame="box" align="center" width="75%">
 

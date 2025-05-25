@@ -284,12 +284,13 @@ eActivities that put each program through a few tests.  The images below each pr
    file:pics/subsList-ut-01.png \\
    file:pics/subsList-ut-02.png 
    #+END_CENTER
- # - *=hessTest(hessian_or_list_of_hessians)=*: Preform the second derivative test on one or more Hessians.
- #   #+BEGIN_CENTER
- #   file:pics/hessTest-ut-01.png \\
- #   file:pics/hessTest-ut-02.png \\
- #   file:pics/hessTest-ut-02.png 
- #   #+END_CENTER
+ - *=hessTest(hessian_or_list_of_hessians)=*: Preform the second derivative test on one or more Hessians.  Univariate hessians may be provided as a number, or
+   a matrix with a single element.  Multivariate hessians must be provided as a matrix.  When a list of Hessians is given, they do not need to be of the same
+   size.
+   #+BEGIN_CENTER
+   file:pics/hessTest-ut-01.png \\
+   file:pics/hessTest-ut-02.png 
+   #+END_CENTER
 
 ** Utilities
 :PROPERTIES:
@@ -311,7 +312,7 @@ These are eActivities I saved off because they contain a general computational p
 
  - *=FunCrt1D=*: Find the critical points of an expression in 1 variable
  - *=FunCrt2D=*: Find the critical points of an expression in 2 variables
-# - *=FunCrt3D=*: Find the critical points of an expression in 3 variables (or any number really)
+ - *=FunCrt3D=*: Find the critical points of an expression in 3 variables (or any number really)
  - *=CubicInterp=*: Cubic Interpolation between two points
  - *=LinearInterp=*: Linear Interpolation between two points
  - *=SolveTri=*: Solve triangles. I add cases as I encounter them, and so far I have ASA, SSS, SAS, & AAS.
@@ -357,25 +358,28 @@ magick pics/jacobian-ut-01.bmp    -gravity South -chop 0x125 -gravity North -cho
 magick pics/jacobian-ut-02.bmp    -gravity South -chop 0x50  -gravity North -chop 0x90  -gravity East -chop 28x0 pics/jacobian-ut-02.png
 magick pics/jacobian-ut-03.bmp    -gravity South -chop 0x55  -gravity North -chop 0x260 -gravity East -chop 28x0 pics/jacobian-ut-03.png
 
-magick pics/gradient-ut-01.bmp    -gravity South -chop 0x55  -gravity North -chop 0x70 -gravity East -chop 28x0 pics/gradient-ut-01.png
+magick pics/gradient-ut-01.bmp    -gravity South -chop 0x55  -gravity North -chop 0x70  -gravity East -chop 28x0 pics/gradient-ut-01.png
 
-magick pics/hessian-ut-01.bmp     -gravity South -chop 0x140 -gravity North -chop 0x70 -gravity East -chop 28x0 pics/hessian-ut-01.png
+magick pics/hessian-ut-01.bmp     -gravity South -chop 0x140 -gravity North -chop 0x70  -gravity East -chop 28x0 pics/hessian-ut-01.png
 magick pics/hessian-ut-02.bmp     -gravity South -chop 0x55  -gravity North -chop 0x300 -gravity East -chop 28x0 pics/hessian-ut-02.png
 
-magick pics/mkDmat-ut-01.bmp      -gravity South -chop 0x155 -gravity North -chop 0x70 -gravity East -chop 28x0 pics/mkDmat-ut-01.png  
+magick pics/mkDmat-ut-01.bmp      -gravity South -chop 0x155 -gravity North -chop 0x70  -gravity East -chop 28x0 pics/mkDmat-ut-01.png  
 magick pics/mkDmat-ut-02.bmp      -gravity South -chop 0x55  -gravity North -chop 0x305 -gravity East -chop 28x0 pics/mkDmat-ut-02.png  
 
 magick pics/mkMat-ut-01.bmp       -gravity South -chop 0x80  -gravity North -chop 0x70  -gravity East -chop 28x0 pics/mkMat-ut-01.png  
 magick pics/mkMat-ut-02.bmp       -gravity South -chop 0x55  -gravity North -chop 0x300 -gravity East -chop 28x0 pics/mkMat-ut-02.png   
 
-magick pics/newtonC1-ut-01.bmp    -gravity South -chop 0x80  -gravity North -chop 0x70 -gravity East -chop 28x0 pics/newtonC1-ut-01.png
-magick pics/newtonC1-ut-02.bmp    -gravity South -chop 0x55  -gravity North -chop 0x400  -gravity East -chop 28x0 pics/newtonC1-ut-02.png
+magick pics/newtonC1-ut-01.bmp    -gravity South -chop 0x80  -gravity North -chop 0x70  -gravity East -chop 28x0 pics/newtonC1-ut-01.png
+magick pics/newtonC1-ut-02.bmp    -gravity South -chop 0x55  -gravity North -chop 0x400 -gravity East -chop 28x0 pics/newtonC1-ut-02.png
 
-magick pics/newtonRn-ut-01.bmp    -gravity South -chop 0x75  -gravity North -chop 0x70 -gravity East -chop 28x0 pics/newtonRn-ut-01.png
-magick pics/newtonRn-ut-02.bmp    -gravity South -chop 0x55   -gravity North -chop 0x355 -gravity East -chop 28x0 pics/newtonRn-ut-02.png
+magick pics/newtonRn-ut-01.bmp    -gravity South -chop 0x75  -gravity North -chop 0x70  -gravity East -chop 28x0 pics/newtonRn-ut-01.png
+magick pics/newtonRn-ut-02.bmp    -gravity South -chop 0x55  -gravity North -chop 0x355 -gravity East -chop 28x0 pics/newtonRn-ut-02.png
 
-magick pics/subsList-ut-01.bmp    -gravity South -chop 0x100  -gravity North -chop 0x70 -gravity East -chop 28x0 pics/subsList-ut-01.png
+magick pics/subsList-ut-01.bmp    -gravity South -chop 0x100 -gravity North -chop 0x70  -gravity East -chop 28x0 pics/subsList-ut-01.png
 magick pics/subsList-ut-02.bmp    -gravity South -chop 0x55  -gravity North -chop 0x205 -gravity East -chop 28x0 pics/subsList-ut-02.png
+
+magick pics/hessTest-ut-01.bmp    -gravity South -chop 0x55  -gravity North -chop 0x70  -gravity East -chop 28x0 pics/hessTest-ut-01.png
+magick pics/hessTest-ut-02.bmp    -gravity South -chop 0x55  -gravity North -chop 0x120 -gravity East -chop 28x0 pics/hessTest-ut-02.png
 #+end_src
 
 #+RESULTS:
